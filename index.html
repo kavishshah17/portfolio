@@ -11,6 +11,7 @@
   <header class="top-nav">
     <div class="container nav-inner">
       <div class="logo">Kavish Shah</div>
+
       <nav class="main-nav">
         <a href="#about">About</a>
         <a href="#help">How I Can Help</a>
@@ -19,11 +20,8 @@
         <a href="#certs">Certifications</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <!-- blog button (works once you make blog repo) -->
-        <!-- <a href="https://YOUR_USERNAME.github.io/blog" target="_blank">Blog</a> -->
       </nav>
 
-      <!-- dark / light toggle -->
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </header>
@@ -55,13 +53,8 @@
           </div>
         </div>
 
-        <!-- RIGHT: Data themed image card -->
+        <!-- RIGHT: Data themed translucent background card -->
         <aside class="hero-card">
-          <!-- Upload a file like data-cover.jpg to your repo and match the name below -->
-          <img src="data-cover.jpg"
-               alt="Data and analytics"
-               class="avatar-img" />
-
           <h2>Data & Business Analytics</h2>
           <p class="hero-tagline">Turning data into decisions</p>
           <p class="hero-meta">
@@ -121,7 +114,7 @@
             <p class="tagline">Scenario analysis · Risk · Growth</p>
             <p>
               Supporting decision-making with scenario analysis, risk assessment and data-backed
-              recommendations that align with business objectives and long-term strategy.
+              recommendations aligned with business objectives and long-term strategy.
             </p>
           </article>
         </div>
@@ -282,21 +275,22 @@
           <div>
             <h3>Statistical Methods</h3>
             <p>
-              Linear & Multiple Regression, Hypothesis Testing, A/B Testing, Decision Tree Analysis,
-              Time Series Forecasting
+              Linear & Multiple Regression, Hypothesis Testing, A/B Testing,
+              Decision Tree Analysis, Time Series Forecasting
             </p>
           </div>
           <div>
             <h3>Analytics & Business</h3>
             <p>
-              Business Analysis, KPI Development, Forecasting, Reporting, Financial Modeling,
-              Scenario Analysis, Risk Analysis, Customer Insights
+              Business Analysis, KPI Development, Forecasting, Reporting,
+              Financial Modeling, Scenario Analysis, Risk Analysis, Customer Insights
             </p>
           </div>
           <div>
             <h3>Tools & Platforms</h3>
             <p>
-              Azure, Databricks, Synapse, OLAP/Data Warehouse Systems, Git, ERP systems and BI platforms
+              Azure, Databricks, Synapse, OLAP/Data Warehouse Systems, Git,
+              ERP systems and BI platforms
             </p>
           </div>
         </div>
@@ -413,6 +407,36 @@
 
     showNextRole();
     setInterval(showNextRole, 2000); // change every 2 seconds
+
+    // Scrollspy: highlight active menu link based on section in view
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+    function setActiveLink() {
+      let currentId = "";
+      const scrollPos = window.scrollY + 120; // offset so it triggers below header
+
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href === `#${currentId}`) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", setActiveLink);
+    window.addEventListener("load", setActiveLink);
   </script>
 </body>
 </html>
