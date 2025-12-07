@@ -167,19 +167,88 @@ body {
   margin: 0 0 0.4rem;
 }
 
-.hero h1 {
-  margin: 0 0 0.25rem;
+.hero-name {
+  margin: 0 0 0.3rem;
   font-size: 2.4rem;
 }
 
-.hero-role {
+/* Rotating roles */
+
+.hero-rotating {
   margin: 0 0 0.8rem;
-  font-size: 1.02rem;
-  color: color-mix(in srgb, var(--text) 70%, var(--accent) 30%);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--text) 60%, var(--accent) 40%);
+  min-height: 1.4em;
+}
+
+#role-rotator {
+  display: inline-block;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeRole 0.5s ease-out forwards;
+}
+
+@keyframes fadeRole {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-desc {
   margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.3rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), #0ea5e9);
+  color: #0b1120;
+  box-shadow: 0 14px 30px rgba(8, 47, 73, 0.4);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(8, 47, 73, 0.55);
+}
+
+.btn.ghost {
+  border-color: var(--border);
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+}
+
+.btn.ghost:hover {
+  background: color-mix(in srgb, var(--panel) 100%, transparent);
+  transform: translateY(-2px);
 }
 
 /* Hero card */
@@ -193,23 +262,8 @@ body {
   text-align: center;
 }
 
-.avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin: 0 auto 0.75rem;
-  background: conic-gradient(
-    from 180deg,
-    #38bdf8,
-    #6366f1,
-    #ec4899,
-    #f59e0b,
-    #38bdf8
-  );
-  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.45);
-}
+/* Image in hero card */
 
-/* Use if you add your own image
 .avatar-img {
   width: 90px;
   height: 90px;
@@ -220,7 +274,6 @@ body {
   border: 3px solid color-mix(in srgb, var(--accent) 50%, var(--panel) 50%);
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.5);
 }
-*/
 
 .hero-card h2 {
   margin: 0 0 0.3rem;
