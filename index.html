@@ -2,193 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>YOUR NAME · Portfolio</title>
+  <title>Your Name · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body id="top">
-  <!-- Top bar -->
+  <!-- Top navigation -->
   <header class="top-nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <span class="dot"></span>
-        <span class="brand-name">YOUR NAME</span>
-      </div>
-
+      <div class="logo">Your Name</div>
       <nav class="main-nav">
-        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#help">How I Can Help</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#certs">Certifications</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <!-- Later you can point this to your blog site -->
-        <!-- <a href="https://YOUR_USERNAME.github.io/blog" target="_blank">Blog</a> -->
+        <!-- blog button (works once you make blog repo) -->
+        <a href="https://YOUR_USERNAME.github.io/blog" target="_blank">Blog</a>
       </nav>
 
-      <!-- Dark / light mode toggle -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <!-- dark / light toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </header>
 
   <main>
-    <!-- HERO / HOME -->
-    <section id="home" class="section hero">
-      <div class="container hero-grid">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
         <div class="hero-text">
-          <p class="pill">Open to opportunities</p>
-          <h1>Hi, I’m <span class="accent">YOUR NAME</span>.</h1>
-          <p class="hero-role">YOUR ROLE – e.g. Frontend Developer / Data Analyst / Student.</p>
+          <p class="hero-eyebrow">Hi, I'm</p>
+          <h1>Your Name</h1>
+          <p class="hero-role">Your role (e.g. Data Engineer / Web Developer)</p>
           <p class="hero-desc">
-            Write 2–3 lines about what you enjoy building or working on. Mention the tools
-            you like and the kind of projects you want more of.
+            Write 2–3 lines about what you do, what you care about, and the kind of problems
+            you like solving. Keep it simple and clear.
           </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn primary">View projects</a>
-            <a href="#contact" class="btn ghost">Contact me</a>
-          </div>
         </div>
 
-        <aside class="hero-panel">
-          <!-- If you want your own photo later, replace this with an <img> -->
-          <div class="gradient-orb"></div>
-
-          <div class="hero-info">
-            <h2>Quick snapshot</h2>
-            <ul>
-              <li><span>Location</span><strong>Your city / Remote</strong></li>
-              <li><span>Focus</span><strong>Web · Data · Design (edit this)</strong></li>
-              <li><span>Stack</span><strong>HTML · CSS · JS (edit this)</strong></li>
-            </ul>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-              <strong>3+</strong>
-              <span>Projects shipped</span>
-            </div>
-            <div>
-              <strong>1</strong>
-              <span>Portfolio you’re viewing 🙂</span>
-            </div>
-          </div>
+        <aside class="hero-card">
+          <!-- change to <img src="avatar.jpg" class="avatar-img"> if you want a photo -->
+          <div class="avatar"></div>
+          <h2>Your Name</h2>
+          <p class="hero-tagline">Short tagline like “Cloud & Analytics Engineer”</p>
+          <p class="hero-meta">Based in City · Open to roles</p>
         </aside>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <div class="container two-col">
-        <div>
-          <h2>About</h2>
-          <p>
-            Write a short story about how you got into tech / design / data, what you’re
-            learning now, and the kind of team or work you’re looking for.
-          </p>
-          <p>
-            Keep it honest and simple. Mention languages or tools you’re most comfortable
-            with and what you want to get better at.
-          </p>
-        </div>
-        <div class="about-details">
-          <h3>Highlights</h3>
-          <ul>
-            <li>🧑‍💻 Built X / Y / Z projects using A / B / C.</li>
-            <li>📚 Currently learning: framework, cloud, or area you care about.</li>
-            <li>🤝 Enjoy working on: frontend, data pipelines, product ideas, etc.</li>
-          </ul>
+      <div class="container">
+        <h2>About me</h2>
+        <p>
+          A short paragraph explaining who you are, what you work on, and what motivates you.
+          Mention your background, a few tools you use, and what you’re focusing on now.
+        </p>
+        <p>
+          You can also add a line about the type of teams or projects you enjoy: startups,
+          data-heavy products, frontend work, backend systems, etc.
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW I CAN HELP -->
+    <section id="help" class="section section-alt">
+      <div class="container">
+        <h2>How I can help</h2>
+        <p class="section-lead">
+          Summarize the main areas where you bring value – think outcomes, not just tools.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Area 1 · Platforms / Foundations</h3>
+            <p class="tagline">Example: Data pipelines · APIs · Infrastructure</p>
+            <p>
+              One short paragraph on how you design or build systems: ETL/ELT, APIs,
+              backend services, or core platform work.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Area 2 · Product / Analytics</h3>
+            <p class="tagline">Dashboards · UX · Experiments</p>
+            <p>
+              How you help teams make better decisions: reports, dashboards,
+              frontend experiences, A/B tests, or user journeys.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Area 3 · Reliability / Quality</h3>
+            <p class="tagline">Testing · Monitoring · Performance</p>
+            <p>
+              How you ensure things stay stable: tests, monitoring, performance improvements,
+              documentation, or clean deployment practices.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section section-alt">
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
       <div class="container">
-        <h2>Projects</h2>
+        <h2>Experience</h2>
         <p class="section-lead">
-          A few projects I’ve worked on. Each one taught me something new.
+          Highlight roles or projects where you applied these skills.
         </p>
 
-        <div class="card-grid">
-          <article class="project-card">
-            <h3>Project One</h3>
-            <p class="project-tag">Type · e.g. Landing page / Dashboard</p>
-            <p>
-              One or two lines on what the project does and what your main contribution was.
-            </p>
-            <p class="project-links">
-              <a href="#" target="_blank">Live demo</a>
-              <span>·</span>
-              <a href="#" target="_blank">Source code</a>
-            </p>
-          </article>
+        <article class="exp-item">
+          <h3>Job Title · Company</h3>
+          <p class="exp-meta">Location · Dates</p>
+          <p class="exp-summary">
+            One sentence describing what the team or product does and your main responsibilities.
+          </p>
+          <ul>
+            <li>Impact bullet with a number, for example: improved X by Y%.</li>
+            <li>Mention tools and outcome together, not just tools alone.</li>
+            <li>Something that shows ownership, collaboration or scale.</li>
+          </ul>
+        </article>
 
-          <article class="project-card">
-            <h3>Project Two</h3>
-            <p class="project-tag">Tech · e.g. React · API · Charts</p>
-            <p>
-              Highlight any interesting problems you solved or features you’re proud of.
-            </p>
-            <p class="project-links">
-              <a href="#" target="_blank">Live demo</a>
-              <span>·</span>
-              <a href="#" target="_blank">Source code</a>
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Project Three</h3>
-            <p class="project-tag">Personal / learning project</p>
-            <p>
-              Explain briefly what you experimented with: animations, layout, data, etc.
-            </p>
-            <p class="project-links">
-              <a href="#" target="_blank">Live demo</a>
-              <span>·</span>
-              <a href="#" target="_blank">Source code</a>
-            </p>
-          </article>
-        </div>
+        <article class="exp-item">
+          <h3>Previous Job / Internship · Company</h3>
+          <p class="exp-meta">Location · Dates</p>
+          <p class="exp-summary">
+            Short summary of what you focused on in this role.
+          </p>
+          <ul>
+            <li>Bullet about building or improving something specific.</li>
+            <li>Bullet about learning, collaboration, or impact.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section section-alt">
       <div class="container">
         <h2>Skills</h2>
-        <p class="section-lead">
-          Tools and concepts I’m comfortable using in real projects.
-        </p>
-        <div class="skill-chips">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>React</span>
-          <span>Git</span>
-          <span>Figma</span>
-          <span>SQL</span>
-          <!-- replace with your real skills -->
+        <p class="section-lead">Tools and concepts I’m comfortable using.</p>
+
+        <div class="skills-grid">
+          <div>
+            <h3>Core strengths</h3>
+            <p>Examples: problem solving · debugging · communication · system design.</p>
+          </div>
+          <div>
+            <h3>Languages & tools</h3>
+            <p>Python · JavaScript · TypeScript · SQL · HTML · CSS (edit to yours).</p>
+          </div>
+          <div>
+            <h3>Platforms & data</h3>
+            <p>AWS · GCP · Azure · Postgres · BigQuery · etc.</p>
+          </div>
+          <div>
+            <h3>Analytics / DevOps</h3>
+            <p>Tableau · Power BI · Git · Docker · CI/CD · monitoring tools.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section section-alt">
-      <div class="container contact">
-        <div>
-          <h2>Contact</h2>
-          <p class="section-lead">
-            Interested in working together or just want to say hi? Reach out.
-          </p>
-        </div>
-        <div class="contact-details">
-          <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="section">
+      <div class="container">
+        <h2>Certifications</h2>
+        <ul class="simple-list">
+          <li>Certification name · Issuer (Year)</li>
+          <li>Another certification · Issuer (Year)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <h2>Education</h2>
+
+        <article class="edu-item">
+          <h3>Degree · Major</h3>
+          <p class="exp-meta">University · Location · Years</p>
           <p>
-            Links:
-            <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            One line about what you focused on: data, software, design, ML, etc.
           </p>
-        </div>
+        </article>
+
+        <article class="edu-item">
+          <h3>Other learning</h3>
+          <p class="exp-meta">Bootcamp · Course · Certification program</p>
+          <p>
+            Mention anything relevant you’ve done outside traditional education.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-lead">
+          Open to roles or collaborations in your target areas. Happy to connect.
+        </p>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>
+          Links:
+          <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </p>
       </div>
     </section>
   </main>
@@ -196,25 +223,21 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> · YOUR NAME</span>
+      <span>© <span id="year"></span> · Your Name · Portfolio</span>
       <a href="#top">Back to top</a>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Current year in footer
+    // Year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Dark / light mode toggle
+    // Theme toggle
     const toggle = document.getElementById("theme-toggle");
-
-    // Load saved theme
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
       toggle.textContent = "☀️";
     }
-
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
       const isDark = document.body.classList.contains("dark");
