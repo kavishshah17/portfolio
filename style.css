@@ -25,6 +25,10 @@ body.dark {
   --accent-soft: rgba(56, 189, 248, 0.18);
   --border: rgba(148, 163, 184, 0.4);
   --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+
+  background:
+    radial-gradient(circle at top, #1f2937 0, #020617 60%),
+    #020617;
 }
 
 /* Global */
@@ -43,9 +47,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top, #1f2937 0, #020617 60%),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -63,7 +65,7 @@ body {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
 }
 
@@ -101,6 +103,12 @@ body {
   background: var(--accent-soft);
   color: var(--text);
   transform: translateY(-1px);
+}
+
+.main-nav a.active {
+  background: var(--accent-soft);
+  color: var(--text);
+  font-weight: 500;
 }
 
 /* Theme toggle */
@@ -251,28 +259,37 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero card */
+/* Hero card with translucent data background */
 
 .hero-card {
-  background: radial-gradient(circle at top, var(--panel-soft), var(--panel));
+  position: relative;
+  overflow: hidden;
   border-radius: 24px;
   padding: 1.6rem 1.4rem 1.3rem;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
   text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.7)
+  );
 }
 
-/* Image in hero card */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data-cover.jpg"); /* match this file name in repo */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
 
-.avatar-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 0.75rem;
-  border: 3px solid color-mix(in srgb, var(--accent) 50%, var(--panel) 50%);
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.5);
+.hero-card > * {
+  position: relative;
 }
 
 .hero-card h2 {
@@ -433,7 +450,7 @@ a {
 
 /* Responsive */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
   }
@@ -441,10 +458,20 @@ a {
   .hero {
     padding-top: 3.3rem;
   }
+}
 
+@media (max-width: 768px) {
   .nav-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .main-nav {
+    order: 3;
+  }
+
+  .theme-toggle {
+    align-self: flex-end;
   }
 
   .contact {
