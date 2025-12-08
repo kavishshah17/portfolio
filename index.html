@@ -5,7 +5,7 @@
   <title>Kavish Shah · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 <body id="top">
   <header class="top-nav">
     <div class="container nav-inner">
@@ -28,7 +28,8 @@
 
   <main>
     <section class="hero">
-      <div class="hero-overlay"></div> <div class="container hero-inner">
+      <div class="hero-overlay"></div> 
+      <div class="container hero-inner">
         
         <p class="hero-eyebrow reveal">Hi, I'm</p>
         <h1 class="hero-name reveal delay-100">Kavish Shah</h1>
@@ -40,6 +41,10 @@
         <p class="hero-subtext reveal delay-200">
           I transform raw data events into reliable, high-speed insights that drive actionable business strategy.
         </p>
+        
+        <div class="hero-cta reveal delay-200">
+          <a href="#contact" class="btn-hero">Let's Connect</a>
+        </div>
 
       </div>
     </section>
@@ -441,6 +446,8 @@
     </div>
   </footer>
 
+  <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
+
   <script>
     // Year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -529,6 +536,24 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- NEW: Scroll Up Button Script ---
+    const scrollUpBtn = document.getElementById("scroll-up");
+    
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollUpBtn.classList.add("show");
+      } else {
+        scrollUpBtn.classList.remove("show");
+      }
+    });
+
+    scrollUpBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
   </script>
 </body>
 </html>
