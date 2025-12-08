@@ -629,34 +629,98 @@ body.dark .skill-tags span:hover {
   margin-bottom: 5px;
 }
 
-/* --- NEW: Education Centered Cards --- */
-.education-centered-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Horizontally center the cards */
-  gap: 30px;
+/* --- NEW: Education Vertical Timeline (Alternating/Center) --- */
+/* Container */
+.education-timeline-center {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-
-.edu-card-center {
+/* The Line */
+.education-timeline-center::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--border);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Center the line exactly */
+  border-radius: 2px;
+}
+/* Items */
+.edu-card-split {
+  padding: 20px 30px;
+  position: relative;
   background: var(--bg-color);
-  padding: 30px;
+  width: 45%; /* Leave space in middle */
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: var(--card-shadow);
-  text-align: center; /* Center text inside the card */
-  width: 100%;
-  max-width: 700px; /* Optional: Constrain width for readability */
+  margin-bottom: 40px;
   transition: transform 0.2s;
 }
-
-.edu-card-center:hover {
-  transform: translateY(-5px);
+.edu-card-split:hover {
+  transform: translateY(-3px);
+}
+/* Left Side (Odd) */
+.edu-card-split:nth-child(odd) {
+  left: 0;
+  /* text-align: right; -- optional, kept left for readability */
+}
+/* Right Side (Even) */
+.edu-card-split:nth-child(even) {
+  left: 55%; /* Push to right side */
+}
+/* Dots */
+.edu-card-split::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -42px; /* Position for Left Cards */
+  background-color: var(--primary);
+  border: 4px solid var(--bg-color);
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 1px var(--border);
+}
+/* Fix Dot for Right Cards */
+.edu-card-split:nth-child(even)::after {
+  left: -42px;
+  right: auto;
 }
 
-.edu-card-center h3 {
-  font-size: 1.25rem;
-  color: var(--primary);
-  margin-bottom: 5px;
+/* Mobile Timeline: Stack vertical and move line to left */
+@media (max-width: 768px) {
+  .education-timeline-center::after {
+    left: 20px; /* Move line to left */
+  }
+  .edu-card-split {
+    width: 100%;
+    padding-left: 50px; /* Make space for line on left */
+    padding-right: 20px;
+    left: 0 !important; /* Reset positioning */
+    margin-bottom: 30px;
+    border: none; 
+    box-shadow: none; /* Simplify for mobile or keep card style */
+    background: transparent; /* Cleaner on mobile */
+  }
+  /* On mobile, we might want to keep the card style but shift it right */
+  .edu-card-split {
+    width: auto;
+    margin-left: 40px; /* Push card right of line */
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+  }
+  
+  .edu-card-split::after {
+    left: -49px !important; /* Dot moves to left line */
+    right: auto !important;
+  }
 }
 
 /* Tableau Button */
