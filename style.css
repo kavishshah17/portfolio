@@ -666,7 +666,6 @@ body.dark .skill-tags span:hover {
 /* Left Side (Odd) */
 .edu-card-split:nth-child(odd) {
   left: 0;
-  /* text-align: right; -- optional, kept left for readability */
 }
 /* Right Side (Even) */
 .edu-card-split:nth-child(even) {
