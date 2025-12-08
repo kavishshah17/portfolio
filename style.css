@@ -154,40 +154,64 @@ body {
   margin-bottom: 1.2rem;
 }
 
-/* Hero */
+/* ---------------------------
+  UPDATED HERO SECTION 
+  ---------------------------
+*/
 
 .hero {
-  padding: 4.2rem 0 3.2rem;
+  position: relative;
+  /* Using a data/analytics themed placeholder image from Unsplash */
+  background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0; /* Taller hero */
+  text-align: center;
+  color: #ffffff; /* Always white text on hero due to dark background */
+  overflow: hidden;
+}
+
+/* Dark overlay to ensure text is readable over the image */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75); /* Dark blue/black tint */
+  z-index: 1;
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
-  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-  margin: 0 0 0.4rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.8rem;
 }
 
 .hero-name {
-  margin: 0 0 0.3rem;
-  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 /* Rotating roles */
 
 .hero-rotating {
-  margin: 0 0 0.8rem;
-  font-size: 1.05rem;
+  margin: 0;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: color-mix(in srgb, var(--text) 60%, var(--accent) 40%);
+  color: var(--accent);
   min-height: 1.4em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 #role-rotator {
@@ -202,7 +226,7 @@ body {
 @keyframes fadeRole {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -210,104 +234,6 @@ body {
   }
 }
 
-.hero-desc {
-  margin: 0;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.3rem;
-}
-
-/* Buttons */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  border: 1px solid transparent;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
-    border-color 0.12s ease;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--accent), #0ea5e9);
-  color: #0b1120;
-  box-shadow: 0 14px 30px rgba(8, 47, 73, 0.4);
-}
-
-.btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 45px rgba(8, 47, 73, 0.55);
-}
-
-.btn.ghost {
-  border-color: var(--border);
-  color: var(--text);
-  background: color-mix(in srgb, var(--panel) 90%, transparent);
-}
-
-.btn.ghost:hover {
-  background: color-mix(in srgb, var(--panel) 100%, transparent);
-  transform: translateY(-2px);
-}
-
-/* Hero card with translucent data background */
-
-.hero-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  padding: 1.6rem 1.4rem 1.3rem;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  text-align: center;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.9),
-    rgba(15, 23, 42, 0.7)
-  );
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data-cover.jpg"); /* match this file name in repo */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.25;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-.hero-card > * {
-  position: relative;
-}
-
-.hero-card h2 {
-  margin: 0 0 0.3rem;
-  font-size: 1.3rem;
-}
-
-.hero-tagline {
-  margin: 0 0 0.2rem;
-  font-size: 0.9rem;
-  color: color-mix(in srgb, var(--text) 70%, var(--accent) 30%);
-}
-
-.hero-meta {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
 
 /* Cards */
 
@@ -451,12 +377,8 @@ a {
 /* Responsive */
 
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 3.3rem;
+  .hero-name {
+    font-size: 2.5rem;
   }
 }
 
