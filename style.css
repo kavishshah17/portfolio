@@ -42,6 +42,11 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
+/* Specific styling for Section Headings */
+.section h2 {
+  margin-bottom: 25px; /* Added more space between heading and content */
+}
+
 a {
   color: var(--primary);
   text-decoration: none;
@@ -64,15 +69,22 @@ a:hover {
   background-color: var(--bg-alt);
 }
 
-/* --- UPDATED: Lead Paragraph (Wider for better text spread) --- */
+/* Specific Padding Reduction for Help & Skills */
+#help, #skills {
+  padding: 50px 0;
+}
+
+/* --- UPDATED: Lead Paragraph --- */
 .section-lead {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-light);
-  max-width: 900px; /* Increased from 700px to allow text on 2 lines */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  text-align: center;
+  /* Spread out text to full container width */
+  max-width: 100%; 
+  /* Left alignment as requested */
+  text-align: left; 
+  /* Space below the lead paragraph */
+  margin-bottom: 50px;
+  line-height: 1.6;
 }
 
 /* Header & Nav */
@@ -132,21 +144,17 @@ a:hover {
 
 /* --- HERO SECTION --- */
 
-/* Animation Images & Timing (7 seconds per image = 21s total loop) */
+/* Animation Images & Timing */
 @keyframes hero-slideshow {
-  /* Image 1: Laptop Dashboard */
   0%, 30% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
-  /* Image 2: Strategy Meeting */
   33%, 63% {
     background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
   }
-  /* Image 3: Financial Graph */
   66%, 96% {
     background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80');
   }
-  /* Loop back */
   100% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
@@ -163,7 +171,6 @@ a:hover {
   /* FORCE WHITE TEXT for both Light and Dark modes */
   color: #ffffff !important; 
   
-  /* 21 seconds total loop */
   animation: hero-slideshow 21s infinite;
   background-size: cover;
   background-position: center;
