@@ -74,7 +74,7 @@ a:hover {
 .top-nav {
   position: sticky;
   top: 0;
-  background-color: var(--bg-color); /* solid bg so content doesn't show through */
+  background-color: var(--bg-color); 
   border-bottom: 1px solid var(--border);
   z-index: 1000;
   padding: 15px 0;
@@ -110,14 +110,33 @@ a:hover {
   color: var(--text-color);
 }
 
-/* Mobile Nav Adjustments */
 @media (max-width: 768px) {
   .main-nav {
-    display: none; /* simple hide for mobile for this snippet scope */
+    display: none; 
   }
 }
 
-/* Hero Section */
+/* --- HERO SLIDESHOW: LIGHT THEME --- */
+
+@keyframes hero-slideshow {
+  /* Image 1: Clean White Office Desk */
+  0%, 30% {
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+  }
+  /* Image 2: Strategy/Planning (Light) */
+  33%, 63% {
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');
+  }
+  /* Image 3: Data Analysis Laptop (Light) */
+  66%, 96% {
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
+  }
+  /* Loop back to Image 1 */
+  100% {
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+  }
+}
+
 .hero {
   position: relative;
   min-height: 80vh;
@@ -125,27 +144,62 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: radial-gradient(circle at center, var(--bg-alt) 0%, var(--bg-color) 70%);
+  
+  /* IMPORTANT: Text is now DARK because background is LIGHT */
+  color: #333333; 
+  
+  /* 30 seconds total duration / 3 images = 10 seconds per image */
+  animation: hero-slideshow 30s infinite;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out; 
 }
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* White overlay with 85% opacity to make text pop against light images */
+  background-color: rgba(255, 255, 255, 0.85); 
+  z-index: 0;
+}
+
+/* Dark Mode Adjustment for Hero */
+/* If user toggles dark mode, we dim the overlay so it's not blindingly bright */
+body.dark .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+body.dark .hero {
+  color: #ffffff;
+}
+
 .hero-inner {
-  z-index: 1;
+  z-index: 1; 
 }
+
 .hero-eyebrow {
   font-size: 1.2rem;
-  color: var(--text-light);
   margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--text-light);
 }
 .hero-name {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 .hero-rotating {
   font-size: 1.5rem;
-  color: var(--primary);
-  height: 1.5em; /* fixed height to prevent layout shift */
+  color: var(--primary); 
+  height: 1.5em;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
@@ -270,20 +324,20 @@ a:hover {
   margin-bottom: 5px;
 }
 .exp-meta {
-  display: block;             
-  font-size: 0.95rem;         
-  color: #555;                
-  margin-top: -5px;           
-  margin-bottom: 12px;        
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: -5px;
+  margin-bottom: 12px;
   font-weight: 500;
-  line-height: 1.4;          
+  line-height: 1.4;
 }
 body.dark .exp-meta {
-  color: #bbb;                
+  color: #bbb;
 }
 @media (max-width: 600px) {
   .exp-meta {
-    font-size: 0.9rem;        
+    font-size: 0.9rem;
   }
 }
 
@@ -311,7 +365,7 @@ body.dark .exp-meta {
   color: var(--text-light);
 }
 
-/* --- NEW: Certifications Grid --- */
+/* Certifications Grid */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -337,13 +391,13 @@ body.dark .exp-meta {
   color: var(--text-light);
 }
 
-/* --- NEW: Tableau Button --- */
+/* Tableau Button */
 .tableau-container {
   margin-top: 30px;
 }
 .btn-tableau {
   display: inline-block;
-  background-color: #E97627; /* Tableau Orange */
+  background-color: #E97627;
   color: #ffffff;
   padding: 12px 24px;
   border-radius: 6px;
@@ -361,7 +415,6 @@ body.dark .btn-tableau {
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 
-
 /* Footer */
 .footer {
   padding: 40px 0;
@@ -374,12 +427,12 @@ body.dark .btn-tableau {
   justify-content: space-between;
 }
 
-/* --- SCROLL ANIMATION STYLES --- */
+/* SCROLL ANIMATION STYLES */
 .reveal {
   opacity: 0;
-  transform: translateY(30px); 
-  transition: all 0.8s ease-out; 
-  will-change: opacity, transform; 
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  will-change: opacity, transform;
 }
 .reveal.active {
   opacity: 1;
