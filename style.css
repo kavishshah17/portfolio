@@ -234,8 +234,121 @@ body {
   }
 }
 
+/* -------------------------------------------
+   NEW ABOUT CARD LAYOUT
+   ------------------------------------------- */
 
-/* Cards */
+/* The main white card container */
+.about-card {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Fixed width left, flexible right */
+  background: var(--panel);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden; /* Contains the children */
+  border: 1px solid var(--border);
+  margin-top: 1.5rem;
+}
+
+/* --- Left Column (Profile & Skills) --- */
+.about-left {
+  padding: 2rem 1.5rem;
+  background: var(--panel-soft); /* Slightly different shade if needed, or white */
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  margin: 0 0 0.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.about-skills-list h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-align: center; /* Matches the screenshot centering */
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.skill-group {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.skill-group strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.skill-group p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* --- Right Column (Bio & Details) --- */
+.about-right {
+  padding: 2.5rem 2.5rem;
+  background: var(--panel);
+}
+
+.about-right p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about-details {
+  margin-top: 2rem;
+}
+
+.about-details h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 1.5rem 0 0.8rem;
+}
+
+.about-details ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.about-details li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Cards (Existing, kept for other sections) */
 
 .cards {
   display: grid;
@@ -381,6 +494,24 @@ a {
     font-size: 2.5rem;
   }
 }
+
+@media (max-width: 850px) {
+  .about-card {
+    grid-template-columns: 1fr; /* Stack into one column */
+  }
+
+  .about-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    align-items: center; /* Center everything on mobile */
+    text-align: center;
+  }
+  
+  .skill-group {
+    text-align: center;
+  }
+}
+
 
 @media (max-width: 768px) {
   .nav-inner {
