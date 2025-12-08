@@ -127,17 +127,21 @@ a:hover {
 
 /* --- HERO SECTION --- */
 
-/* Animation Images & Timing */
+/* Animation Images & Timing (7 seconds per image = 21s total loop) */
 @keyframes hero-slideshow {
+  /* Image 1: Laptop Dashboard */
   0%, 30% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
+  /* Image 2: Strategy Meeting */
   33%, 63% {
     background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
   }
+  /* Image 3: Financial Graph */
   66%, 96% {
     background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80');
   }
+  /* Loop back */
   100% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
@@ -154,6 +158,7 @@ a:hover {
   /* FORCE WHITE TEXT for both Light and Dark modes */
   color: #ffffff !important; 
   
+  /* 21 seconds total loop */
   animation: hero-slideshow 21s infinite;
   background-size: cover;
   background-position: center;
@@ -355,21 +360,22 @@ a:hover {
 /* Flex container for Logo + Text */
 .exp-header {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 10px;
+  align-items: center; /* Vertically centered */
+  gap: 20px;
+  margin-bottom: 15px;
 }
 
 /* Logo Styling */
 .company-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain; /* ensures logo fits within box without distorting */
-  background-color: #ffffff; /* white background for dark logos */
-  border-radius: 8px;
-  padding: 2px;
+  width: 80px;  /* Increased size for clearer logos */
+  height: 80px; 
+  object-fit: contain; /* Prevents stretching */
+  background-color: #ffffff; /* White background for dark logos */
+  border-radius: 12px;
+  padding: 8px;
   border: 1px solid var(--border);
-  flex-shrink: 0; /* prevents logo from shrinking */
+  flex-shrink: 0; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 /* Text Container */
@@ -378,15 +384,15 @@ a:hover {
 }
 
 .exp-item h3, .edu-item h3 {
-  margin-bottom: 2px;
-  font-size: 1.1rem;
+  margin-bottom: 4px;
+  font-size: 1.15rem;
 }
 
 .exp-meta {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #555;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-weight: 500;
   line-height: 1.4;
 }
