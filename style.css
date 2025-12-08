@@ -97,19 +97,15 @@ a:hover {
   justify-content: space-between;
 }
 
-/* --- UPDATED: Logo Styling with Dark Mode Fix --- */
+/* Logo Styling with Dark Mode Fix */
 .nav-logo-img {
   height: 40px; 
   width: auto;
   object-fit: contain;
   display: block;
-  /* Smooth transition for color inversion */
   transition: filter 0.3s;
 }
 
-/* FIX: Invert Logo colors when Dark Mode is active */
-/* This turns Black -> White (perfect for transparent logos) */
-/* Or White Background -> Black Background (blends into header) */
 body.dark .nav-logo-img {
   filter: invert(1) brightness(200%);
 }
@@ -245,10 +241,15 @@ body.dark .nav-logo-img {
   font-weight: 400;
 }
 
-/* --- Hero CTA Button --- */
+/* --- UPDATED: Hero CTA Buttons --- */
 .hero-cta {
   margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  flex-wrap: wrap; /* Stack on small screens */
 }
+
 .btn-hero {
   display: inline-block;
   background-color: var(--primary);
@@ -257,14 +258,28 @@ body.dark .nav-logo-img {
   border-radius: 50px;
   font-weight: 600;
   font-size: 1.05rem;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: all 0.2s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 2px solid var(--primary); /* Added border to match sizing */
 }
+
 .btn-hero:hover {
   transform: translateY(-3px);
   text-decoration: none;
   color: #fff;
   filter: brightness(1.1);
+}
+
+/* Secondary Outline Button Style */
+.btn-hero-outline {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-hero-outline:hover {
+  background-color: #ffffff;
+  color: #333;
 }
 
 /* About Card */
@@ -644,8 +659,7 @@ body.dark .skill-tags span:hover {
   margin-bottom: 5px;
 }
 
-/* --- NEW: Education Vertical Timeline (Alternating/Center) --- */
-/* Container */
+/* --- Education Vertical Timeline (Alternating/Center) --- */
 .education-timeline-center {
   position: relative;
   max-width: 1000px;
@@ -684,7 +698,7 @@ body.dark .skill-tags span:hover {
 }
 /* Right Side (Even) */
 .edu-card-split:nth-child(even) {
-  left: 55%; /* Push to right side */
+  left: 55%; 
 }
 /* Dots */
 .edu-card-split::after {
@@ -706,25 +720,24 @@ body.dark .skill-tags span:hover {
   right: auto;
 }
 
-/* Mobile Timeline: Stack vertical and move line to left */
+/* Mobile Timeline */
 @media (max-width: 768px) {
   .education-timeline-center::after {
-    left: 20px; /* Move line to left */
+    left: 20px; 
   }
   .edu-card-split {
     width: 100%;
-    padding-left: 50px; /* Make space for line on left */
+    padding-left: 50px; 
     padding-right: 20px;
-    left: 0 !important; /* Reset positioning */
+    left: 0 !important; 
     margin-bottom: 30px;
     border: none; 
-    box-shadow: none; /* Simplify for mobile or keep card style */
-    background: transparent; /* Cleaner on mobile */
+    box-shadow: none; 
+    background: transparent; 
   }
-  /* On mobile, we might want to keep the card style but shift it right */
   .edu-card-split {
     width: auto;
-    margin-left: 40px; /* Push card right of line */
+    margin-left: 40px; 
     background: var(--bg-color);
     border: 1px solid var(--border);
     box-shadow: var(--card-shadow);
@@ -732,33 +745,74 @@ body.dark .skill-tags span:hover {
   }
   
   .edu-card-split::after {
-    left: -49px !important; /* Dot moves to left line */
+    left: -49px !important; 
     right: auto !important;
   }
 }
 
-/* Tableau Button */
-.tableau-container {
-  margin-top: 30px;
+/* --- NEW: Tableau Profile Card --- */
+.tableau-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
-.btn-tableau {
-  display: inline-block;
-  background-color: #E97627;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(233, 118, 39, 0.2);
-}
-.btn-tableau:hover {
-  background-color: #d3651b;
+
+.tableau-profile-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border);
+  padding: 15px 25px;
+  border-radius: 50px; /* Pill shape */
   text-decoration: none;
-  transform: translateY(-2px);
-  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  max-width: 450px;
+  width: 100%;
 }
-body.dark .btn-tableau {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+
+.tableau-profile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-decoration: none;
+  border-color: #E97627; /* Tableau orange border on hover */
+}
+
+.tableau-logo-area {
+  background-color: #fcebd9; /* Light orange background */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.tableau-icon-large {
+  font-size: 1.5rem;
+}
+
+.tableau-info {
+  flex: 1;
+}
+
+.tableau-info h4 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.tableau-info p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.tableau-arrow {
+  color: #E97627;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* Footer */
