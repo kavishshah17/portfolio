@@ -551,7 +551,25 @@ a {
     align-items: flex-start;
   }
 }
+/* --- SCROLL ANIMATION STYLES --- */
 
+/* 1. The starting state: invisible and shifted down */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px); /* Push element down 30px */
+  transition: all 0.8s ease-out; /* Smooth transition taking 0.8 seconds */
+  will-change: opacity, transform; /* Optimization for smoother performance */
+}
+
+/* 2. The active state: visible and back to normal position */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Stagger animations for cards so they don't all appear at once */
+.reveal.delay-100 { transition-delay: 0.1s; }
+.reveal.delay-200 { transition-delay: 0.2s; }
 /* --- Add this to the bottom of your style.css file --- */
 
 /* Experience Metadata (Location and Date) */
