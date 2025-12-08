@@ -116,41 +116,40 @@ a:hover {
   }
 }
 
-/* --- HERO SLIDESHOW: LIGHT THEME --- */
+/* --- HERO SECTION --- */
 
+/* Updated Animation Images: Business Strategy Focus */
 @keyframes hero-slideshow {
-  /* Image 1: Clean White Office Desk */
+  /* Image 1: Business Strategy / Glass Board */
   0%, 30% {
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1920&q=80');
   }
-  /* Image 2: Strategy/Planning (Light) */
+  /* Image 2: Data Analytics / Laptop */
   33%, 63% {
-    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');
-  }
-  /* Image 3: Data Analysis Laptop (Light) */
-  66%, 96% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
-  /* Loop back to Image 1 */
+  /* Image 3: Abstract Digital Data */
+  66%, 96% {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+  }
+  /* Loop back */
   100% {
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1920&q=80');
   }
 }
 
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   
-  /* IMPORTANT: Text is now DARK because background is LIGHT */
-  color: #333333; 
+  /* FORCE WHITE TEXT for both Light and Dark modes */
+  color: #ffffff !important; 
   
-  /* 30 seconds total duration / 3 images = 10 seconds per image */
   animation: hero-slideshow 30s infinite;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -163,18 +162,9 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  /* White overlay with 85% opacity to make text pop against light images */
-  background-color: rgba(255, 255, 255, 0.85); 
+  /* Dark overlay for BOTH modes to ensure white text is readable */
+  background-color: rgba(0, 0, 0, 0.7); 
   z-index: 0;
-}
-
-/* Dark Mode Adjustment for Hero */
-/* If user toggles dark mode, we dim the overlay so it's not blindingly bright */
-body.dark .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-body.dark .hero {
-  color: #ffffff;
 }
 
 .hero-inner {
@@ -185,14 +175,15 @@ body.dark .hero {
   font-size: 1.2rem;
   margin-bottom: 10px;
   font-weight: 500;
-  color: var(--text-light);
+  opacity: 0.95;
+  color: #ffffff; /* Explicitly white */
 }
 .hero-name {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  color: var(--text-color);
+  color: #ffffff; /* Explicitly white */
 }
 .hero-rotating {
   font-size: 1.5rem;
@@ -200,19 +191,37 @@ body.dark .hero {
   height: 1.5em;
   margin-bottom: 20px;
   font-weight: 600;
-}
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Adds contrast */
 }
 .hero-subtext {
   max-width: 600px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  color: var(--text-light);
+  font-size: 1.15rem;
+  opacity: 1; /* Full opacity */
+  color: #ffffff; /* Explicitly white */
+  font-weight: 400;
+}
+
+/* --- Hero CTA Button --- */
+.hero-cta {
+  margin-top: 35px;
+}
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.btn-hero:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #fff;
+  filter: brightness(1.1);
 }
 
 /* About Card */
@@ -427,7 +436,46 @@ body.dark .btn-tableau {
   justify-content: space-between;
 }
 
+/* --- Scroll Up Button (Bottom Left) --- */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;  /* Per request: Bottom Left */
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+}
+.scroll-up-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-up-btn:hover {
+  transform: translateY(-5px);
+  background-color: #1d4ed8;
+}
+
 /* SCROLL ANIMATION STYLES */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);
