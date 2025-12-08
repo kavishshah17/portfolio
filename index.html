@@ -17,6 +17,7 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#certs">Certifications</a>
+        <a href="#pubs">Publications</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -325,14 +326,56 @@
     <section id="certs" class="section">
       <div class="container">
         <h2 class="reveal">Certifications</h2>
-        <ul class="simple-list reveal">
-          <li>Certification Name · Issuing Organization</li>
-          <li>Certification Name · Issuing Organization</li>
-        </ul>
+        <div class="cert-grid reveal">
+          <div class="cert-card">
+            <h4>McKinsey Forward Program</h4>
+            <p>McKinsey & Company</p>
+          </div>
+          <div class="cert-card">
+            <h4>Advanced Microsoft Excel</h4>
+            <p>Tata Steel</p>
+          </div>
+          <div class="cert-card">
+            <h4>Python for Data Science and AI</h4>
+            <p>IBM</p>
+          </div>
+          <div class="cert-card">
+            <h4>Python for Everybody</h4>
+            <p>Coursera</p>
+          </div>
+          <div class="cert-card">
+            <h4>Six Sigma: Green Belt</h4>
+            <p>LinkedIn</p>
+          </div>
+          <div class="cert-card">
+            <h4>SQL Fundamentals</h4>
+            <p>Datacamp</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="education" class="section section-alt">
+    <section id="pubs" class="section section-alt">
+      <div class="container">
+        <h2 class="reveal">Publications</h2>
+        <article class="exp-item reveal">
+            <h3>District Cooling System with Solar-based Vapor Absorption Chiller</h3>
+            <p class="exp-meta">Presented at the MIT-Harvard Conference</p>
+            <ul>
+              <li>
+                Co-authored and presented a research paper on sustainable cooling systems.
+              </li>
+              <li>
+                Conducted financial analysis of the chiller system, leading to the development of a 
+                financial model that forecast the payback period, net present value, return on investment, 
+                and unit pricing.
+              </li>
+            </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
       <div class="container">
         <h2 class="reveal">Education</h2>
 
@@ -364,19 +407,29 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Contact</h2>
         <p class="section-lead reveal">
           Open to roles and collaborations in business analytics, data analysis and financial analytics.
         </p>
-        <p class="reveal">Email: <a href="mailto:you@example.com">you@example.com</a></p>
-        <p class="reveal">
-          Links:
-          <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-          <span>·</span>
-          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </p>
+        
+        <div class="contact-links reveal">
+          <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+          <p>
+            Links:
+            <a href="https://github.com/kavishshah17" target="_blank">GitHub</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/kavishshah1702/" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="tableau-container reveal delay-100">
+           <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="btn-tableau">
+             View My Tableau Visualizations
+           </a>
+        </div>
+
       </div>
     </section>
   </main>
@@ -459,20 +512,19 @@
     window.addEventListener("scroll", setActiveLink);
     window.addEventListener("load", setActiveLink);
 
-    // --- NEW: SCROLL REVEAL ANIMATION SCRIPT ---
+    // Scroll reveal animation script
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Optional: Stop observing once revealed to ensure it doesn't animate again when scrolling up
           observer.unobserve(entry.target); 
         }
       });
     }, {
       root: null,
-      threshold: 0.15, // Trigger when 15% of the element is visible
+      threshold: 0.15,
       rootMargin: "0px"
     });
 
