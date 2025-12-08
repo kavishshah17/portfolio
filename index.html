@@ -167,8 +167,13 @@
         </p>
 
         <article class="exp-item reveal">
-          <h3>Research Analyst 4 · State of Oregon</h3>
-          <p class="exp-meta">United States · Jan 2025 - Present</p>
+          <div class="exp-header">
+            <img src="State_of_Oregon.png" alt="State of Oregon" class="company-logo">
+            <div class="exp-content">
+              <h3>Research Analyst 4 · State of Oregon</h3>
+              <p class="exp-meta">United States · Jan 2025 - Present</p>
+            </div>
+          </div>
           <ul>
             <li>
               Developed Python-based analytical functions that dynamically apply metadata-driven filters
@@ -184,8 +189,13 @@
         </article>
 
         <article class="exp-item reveal">
-          <h3>Operational Data Analyst · H.V. Impex Inc</h3>
-          <p class="exp-meta">United States · June 2024 - Jan 2025</p>
+          <div class="exp-header">
+            <img src="H.V_impex_Inc.png" alt="H.V. Impex" class="company-logo">
+            <div class="exp-content">
+              <h3>Operational Data Analyst · H.V. Impex Inc</h3>
+              <p class="exp-meta">United States · June 2024 - Jan 2025</p>
+            </div>
+          </div>
           <ul>
             <li>
               Collaborated with cross-functional teams to identify bottlenecks in ERP data flows, redesigning
@@ -206,8 +216,13 @@
         </article>
 
         <article class="exp-item reveal">
-          <h3>Business Analyst · The Kent Group</h3>
-          <p class="exp-meta">United States · July 2023 - June 2024</p>
+          <div class="exp-header">
+            <img src="Kent.png" alt="The Kent Group" class="company-logo">
+            <div class="exp-content">
+              <h3>Business Analyst · The Kent Group</h3>
+              <p class="exp-meta">United States · July 2023 - June 2024</p>
+            </div>
+          </div>
           <ul>
             <li>
               Formulated business cases using SQL queries to analyze monthly operational performance metrics and
@@ -228,8 +243,13 @@
         </article>
 
         <article class="exp-item reveal">
-          <h3>Data Analyst & Business Intelligence Intern · CargoSprint</h3>
-          <p class="exp-meta">United States · July 2022 - Sept 2022</p>
+          <div class="exp-header">
+            <img src="Cargo_Sprint.png" alt="CargoSprint" class="company-logo">
+            <div class="exp-content">
+              <h3>Data Analyst & Business Intelligence Intern · CargoSprint</h3>
+              <p class="exp-meta">United States · July 2022 - Sept 2022</p>
+            </div>
+          </div>
           <ul>
             <li>
               Automated ETL processes by extracting financial data from a data lake and integrating it into a large
@@ -253,8 +273,12 @@
         </article>
 
         <article class="exp-item reveal">
-          <h3>Business Analyst · Jayant Pipe Syndicate</h3>
-          <p class="exp-meta">India · June 2019 - Feb 2021</p>
+          <div class="exp-header">
+            <div class="exp-content">
+              <h3>Business Analyst · Jayant Pipe Syndicate</h3>
+              <p class="exp-meta">India · June 2019 - Feb 2021</p>
+            </div>
+          </div>
           <ul>
             <li>
               Devised a data-driven operational plan incorporating performance metrics, pricing strategy and inventory
@@ -537,10 +561,9 @@
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- NEW: Scroll Up Button Script ---
+    // --- Scroll Up Button Script ---
     const scrollUpBtn = document.getElementById("scroll-up");
     
-    // We check if the button exists before adding listeners to avoid errors
     if(scrollUpBtn) {
         window.addEventListener("scroll", () => {
           if (window.scrollY > 300) {
