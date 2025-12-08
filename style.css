@@ -97,12 +97,21 @@ a:hover {
   justify-content: space-between;
 }
 
-/* NEW: Logo Image Styling */
+/* --- UPDATED: Logo Styling with Dark Mode Fix --- */
 .nav-logo-img {
-  height: 40px; /* Adjust height to fit navbar */
+  height: 40px; 
   width: auto;
   object-fit: contain;
   display: block;
+  /* Smooth transition for color inversion */
+  transition: filter 0.3s;
+}
+
+/* FIX: Invert Logo colors when Dark Mode is active */
+/* This turns Black -> White (perfect for transparent logos) */
+/* Or White Background -> Black Background (blends into header) */
+body.dark .nav-logo-img {
+  filter: invert(1) brightness(200%);
 }
 
 .main-nav {
@@ -588,6 +597,7 @@ a:hover {
   box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
 }
 
+/* Dark mode adjustments for skills */
 body.dark .skill-tags span {
   background-color: #2d2d2d;
   color: #e0e0e0;
@@ -623,7 +633,8 @@ body.dark .skill-tags span:hover {
   color: var(--text-light);
 }
 
-/* --- OTHER ITEMS --- */
+/* --- OTHER ITEMS (Publications) --- */
+/* Default styling for single column items */
 .exp-item {
   margin-bottom: 40px;
   border-left: 3px solid var(--border);
@@ -633,7 +644,8 @@ body.dark .skill-tags span:hover {
   margin-bottom: 5px;
 }
 
-/* --- Education Vertical Timeline (Alternating/Center) --- */
+/* --- NEW: Education Vertical Timeline (Alternating/Center) --- */
+/* Container */
 .education-timeline-center {
   position: relative;
   max-width: 1000px;
@@ -672,7 +684,7 @@ body.dark .skill-tags span:hover {
 }
 /* Right Side (Even) */
 .edu-card-split:nth-child(even) {
-  left: 55%; 
+  left: 55%; /* Push to right side */
 }
 /* Dots */
 .edu-card-split::after {
@@ -694,24 +706,25 @@ body.dark .skill-tags span:hover {
   right: auto;
 }
 
-/* Mobile Timeline */
+/* Mobile Timeline: Stack vertical and move line to left */
 @media (max-width: 768px) {
   .education-timeline-center::after {
-    left: 20px; 
+    left: 20px; /* Move line to left */
   }
   .edu-card-split {
     width: 100%;
-    padding-left: 50px; 
+    padding-left: 50px; /* Make space for line on left */
     padding-right: 20px;
-    left: 0 !important; 
+    left: 0 !important; /* Reset positioning */
     margin-bottom: 30px;
     border: none; 
-    box-shadow: none; 
-    background: transparent; 
+    box-shadow: none; /* Simplify for mobile or keep card style */
+    background: transparent; /* Cleaner on mobile */
   }
+  /* On mobile, we might want to keep the card style but shift it right */
   .edu-card-split {
     width: auto;
-    margin-left: 40px; 
+    margin-left: 40px; /* Push card right of line */
     background: var(--bg-color);
     border: 1px solid var(--border);
     box-shadow: var(--card-shadow);
@@ -719,7 +732,7 @@ body.dark .skill-tags span:hover {
   }
   
   .edu-card-split::after {
-    left: -49px !important; 
+    left: -49px !important; /* Dot moves to left line */
     right: auto !important;
   }
 }
@@ -764,7 +777,7 @@ body.dark .btn-tableau {
 .scroll-up-btn {
   position: fixed;
   bottom: 30px;
-  left: 30px;  
+  left: 30px;  /* Position: Bottom Left */
   background-color: var(--primary);
   color: #fff;
   border: none;
