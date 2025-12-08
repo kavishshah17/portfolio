@@ -409,7 +409,7 @@ body.dark .exp-meta {
   margin-bottom: 8px;
 }
 
-/* --- NEW: Projects Grid Styling --- */
+/* --- Projects Grid Styling --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -466,7 +466,6 @@ body.dark .exp-meta {
   text-decoration: none;
 }
 
-/* Style for disabled buttons */
 .btn-project.disabled {
   border-color: #ccc;
   color: #999;
@@ -477,19 +476,68 @@ body.dark .exp-meta {
   color: #999;
 }
 
-/* Skills Grid */
+/* --- NEW: Skills Tag Cloud --- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
-.skills-grid h3 {
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 10px;
+
+.skill-card {
+  background: var(--bg-color);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s;
 }
-.skills-grid p {
-  color: var(--text-light);
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--bg-alt);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  background-color: var(--bg-alt);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-tags span:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+/* Dark mode adjustments for skills */
+body.dark .skill-tags span {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+body.dark .skill-tags span:hover {
+  background-color: var(--primary);
+  color: #ffffff;
 }
 
 /* Certifications Grid */
