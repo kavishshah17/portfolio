@@ -155,7 +155,7 @@ body {
 }
 
 /* ---------------------------
-  UPDATED HERO SECTION 
+  HERO SECTION 
   ---------------------------
 */
 
@@ -165,9 +165,12 @@ body {
   background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center;
-  padding: 8rem 0; /* Taller hero */
+  
+  /* Increased padding to make it taller */
+  padding: 11rem 0; 
+  
   text-align: center;
-  color: #ffffff; /* Always white text on hero due to dark background */
+  color: #ffffff;
   overflow: hidden;
 }
 
@@ -214,6 +217,16 @@ body {
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
+/* Subtext below rotating roles */
+.hero-subtext {
+  margin-top: 1.5rem;
+  max-width: 600px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
 #role-rotator {
   display: inline-block;
   opacity: 0;
@@ -235,7 +248,7 @@ body {
 }
 
 /* -------------------------------------------
-   NEW ABOUT CARD LAYOUT
+   ABOUT CARD LAYOUT
    ------------------------------------------- */
 
 /* The main white card container */
@@ -511,7 +524,6 @@ a {
     text-align: center;
   }
 }
-
 
 @media (max-width: 768px) {
   .nav-inner {
