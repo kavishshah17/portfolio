@@ -551,3 +551,28 @@ a {
     align-items: flex-start;
   }
 }
+
+/* --- Add this to the bottom of your style.css file --- */
+
+/* Experience Metadata (Location and Date) */
+.exp-meta {
+  display: block;             /* Ensures it sits on its own line */
+  font-size: 0.95rem;         /* Slightly smaller than the main text */
+  color: #555;                /* Muted color to distinguish from the Job Title */
+  margin-top: -5px;           /* Pulls it closer to the Job Title */
+  margin-bottom: 12px;        /* Adds space before the bullet points start */
+  font-weight: 500;
+  line-height: 1.4;           /* Ensures good spacing if text wraps on mobile */
+}
+
+/* Dark Mode support for the dates */
+body.dark .exp-meta {
+  color: #bbb;                /* Lighter gray for dark backgrounds */
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 600px) {
+  .exp-meta {
+    font-size: 0.9rem;        /* Slightly smaller on phones to prevent crowding */
+  }
+}
