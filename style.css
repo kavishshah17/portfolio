@@ -346,7 +346,7 @@ a:hover {
   margin-bottom: 10px;
 }
 
-/* --- UPDATED: Experience List Layout (Clean Row Style) --- */
+/* --- Experience List Layout (Clean Row Style) --- */
 .experience-list {
   display: flex;
   flex-direction: column;
@@ -444,7 +444,7 @@ a:hover {
   }
 }
 
-/* --- UPDATED: Projects Gallery Grid --- */
+/* --- Projects Gallery Grid --- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -629,59 +629,34 @@ body.dark .skill-tags span:hover {
   margin-bottom: 5px;
 }
 
-/* --- NEW: Education Vertical Timeline --- */
-/* This only targets the Education section */
-.timeline-section .container {
-  position: relative;
-  /* The Vertical Line */
-  border-left: 3px solid var(--border);
-  margin-left: 20px; 
-  padding-left: 40px; 
+/* --- NEW: Education Centered Cards --- */
+.education-centered-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center the cards */
+  gap: 30px;
 }
 
-.edu-item-timeline {
-  position: relative;
-  margin-bottom: 50px;
+.edu-card-center {
   background: var(--bg-color);
   padding: 30px;
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: var(--card-shadow);
+  text-align: center; /* Center text inside the card */
+  width: 100%;
+  max-width: 700px; /* Optional: Constrain width for readability */
   transition: transform 0.2s;
 }
 
-.edu-item-timeline:hover {
-  transform: translateY(-3px);
+.edu-card-center:hover {
+  transform: translateY(-5px);
 }
 
-/* The "Dot" on the timeline */
-.edu-item-timeline::before {
-  content: '';
-  position: absolute;
-  left: -50px; /* Adjust to sit on the line */
-  top: 30px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  border: 4px solid var(--bg-color); 
-  z-index: 1;
-  box-shadow: 0 0 0 1px var(--border);
-}
-
-/* Remove bottom margin on last item */
-.edu-item-timeline:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 600px) {
-  .timeline-section .container {
-    margin-left: 10px;
-    padding-left: 25px;
-  }
-  .edu-item-timeline::before {
-    left: -35px;
-  }
+.edu-card-center h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 5px;
 }
 
 /* Tableau Button */
