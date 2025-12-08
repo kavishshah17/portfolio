@@ -1,624 +1,806 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Kavish Shah · Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body id="top">
-  <header class="top-nav">
-    <div class="container nav-inner">
-      <a href="#top" class="logo-link">
-        <img src="KS.png" alt="Kavish Shah Logo" class="nav-logo-img" />
-      </a>
+:root {
+  --bg-color: #ffffff;
+  --bg-alt: #f7f9fc;
+  --text-color: #333333;
+  --text-light: #555555;
+  --primary: #2563eb;
+  --border: #e0e0e0;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
 
-      <nav class="main-nav">
-        <a href="#about">About</a>
-        <a href="#help">How I Can Help</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#certs">Certifications</a>
-        <a href="#pubs">Publications</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
+.dark {
+  --bg-color: #121212;
+  --bg-alt: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-light: #aaaaaa;
+  --primary: #60a5fa;
+  --border: #333333;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
 
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </div>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div> 
-      <div class="container hero-inner">
-        
-        <p class="hero-eyebrow reveal">Hi, I'm</p>
-        <h1 class="hero-name reveal delay-100">Kavish Shah</h1>
+html {
+  scroll-behavior: smooth;
+}
 
-        <p class="hero-rotating reveal delay-200">
-          <span id="role-rotator"></span>
-        </p>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-        <p class="hero-subtext reveal delay-200">
-          I transform raw data events into reliable, high-speed insights that drive actionable business strategy.
-        </p>
-        
-        <div class="hero-cta reveal delay-200">
-          <a href="#contact" class="btn-hero">Let's Connect</a>
-        </div>
+/* Typography & Layout */
+h1, h2, h3, h4 {
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
 
-      </div>
-    </section>
+.section h2 {
+  margin-bottom: 25px; 
+}
 
-    <section id="about" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">About me</h2>
-        <p class="section-lead reveal">
-          An analytical professional leveraging business acumen to turn raw data into business clarity through rigorous analysis, statistical modeling, and impactful visualization.
-        </p>
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-        <div class="about-card reveal">
-          
-          <div class="about-left">
-            <div class="profile-header">
-              <img src="profile.jpg" alt="Kavish Shah" class="profile-pic" />
-              <h3 class="profile-name">Kavish Shah</h3>
-              <p class="profile-title">Business & Data Analyst</p>
-            </div>
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-            <div class="about-skills-list">
-              <h4>Skills</h4>
-              
-              <div class="skill-group">
-                <strong>Technical</strong>
-                <p>Python, R, SQL, Power BI, Tableau, Salesforce, PostgreSQL, MS Excel</p>
-              </div>
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background-color: var(--bg-alt);
+}
 
-              <div class="skill-group">
-                <strong>Analytics</strong>
-                <p>KPI Development, Forecasting, Financial Modeling, Risk Analysis, Customer Insights</p>
-              </div>
+#help, #skills {
+  padding: 50px 0;
+}
 
-              <div class="skill-group">
-                <strong>Tools</strong>
-                <p>Azure, Databricks, Synapse, Git, ERP systems, OLAP/Data Warehouses</p>
-              </div>
-            </div>
-          </div>
+/* Lead Paragraph */
+.section-lead {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 100%; 
+  text-align: left; 
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
 
-          <div class="about-right">
-            <p>
-              I work across business analysis, data analytics and financial modeling to help organizations
-              make informed decisions. My experience spans forecasting, reporting, operational analysis,
-              dashboard development and translating complex datasets into practical insights for business teams.
-            </p>
-            <p>
-              I enjoy solving ambiguous business problems, optimizing workflows and supporting strategic decisions
-              using clear data storytelling. I’ve worked across multiple industries, which has sharpened my 
-              adaptability and ability to quickly grasp industry-specific nuances.
-            </p>
+/* Header & Nav */
+.top-nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color); 
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 15px 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-            <div class="about-details">
-              <h4>Expertise in</h4>
-              <ul>
-                <li>Designing actionable dashboards in Power BI and Tableau.</li>
-                <li>Financial forecasting, scenario analysis, and risk assessment.</li>
-                <li>Root-cause analysis to identify operational bottlenecks.</li>
-                <li>Translating raw data into business strategies for stakeholders.</li>
-              </ul>
+/* NEW: Logo Image Styling */
+.nav-logo-img {
+  height: 40px; /* Adjust height to fit navbar */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 
-              <h4>Key deliverables</h4>
-              <ul>
-                <li>Improved operational completeness metrics by 25% through Python-based dynamic filtering.</li>
-                <li>Redesigned data validation checks improving KPI reporting accuracy by 30%.</li>
-                <li>Supported strategy to increase revenue by $1M through statistical forecasting.</li>
-                <li>Automated ETL processes saving 60 man-hours monthly via Azure and Databricks.</li>
-                <li>Optimized supply chain workflows leading to a 20% surge in sales.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+.main-nav a {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  position: relative;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+  text-decoration: none;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
 
-      </div>
-    </section>
+/* --- MOBILE FIX 1: Navigation --- */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .main-nav {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+}
 
-    <section id="help" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">How I can help</h2>
-        <p class="section-lead reveal">
-          Areas where I bring the most value, combining business context with analytical depth.
-        </p>
+/* --- HERO SECTION --- */
 
-        <div class="cards">
-          <article class="card reveal">
-            <h3>Business & Data Intelligence</h3>
-            <p class="tagline">KPIs · Dashboards · Root-cause analysis</p>
-            <p>
-              Defining and tracking KPIs, building dashboards and running deep dives that explain what’s
-              happening in the business, why it’s happening and what to do next.
-            </p>
-          </article>
+@keyframes hero-slideshow {
+  0%, 30% {
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
+  }
+  33%, 63% {
+    background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
+  }
+  66%, 96% {
+    background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80');
+  }
+  100% {
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
+  }
+}
 
-          <article class="card reveal delay-100">
-            <h3>Financial & Operational Analytics</h3>
-            <p class="tagline">Forecasting · Performance · Optimization</p>
-            <p>
-              Using financial data, forecasting techniques and operational metrics to improve performance,
-              evaluate initiatives and support planning and resource allocation.
-            </p>
-          </article>
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  color: #ffffff !important; 
+  
+  animation: hero-slideshow 21s infinite;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  background-attachment: fixed; 
+  transition: background-image 1s ease-in-out; 
+}
 
-          <article class="card reveal delay-200">
-            <h3>Strategy & Decision Support</h3>
-            <p class="tagline">Scenario analysis · Risk · Growth</p>
-            <p>
-              Supporting decision-making with scenario analysis, risk assessment and data-backed
-              recommendations aligned with business objectives and long-term strategy.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; 
+    min-height: 60vh;
+  }
+  .hero-name {
+    font-size: 2.5rem; 
+  }
+  .hero-rotating {
+    font-size: 1.2rem;
+  }
+}
 
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="reveal">Professional Experience</h2>
-        <p class="section-lead reveal">
-          Roles where I applied business analysis, data analytics and financial insights to drive impact.
-        </p>
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 0;
+}
 
-        <div class="experience-list">
-          
-          <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="State_of_Oregon.png" alt="State of Oregon" class="company-logo">
-            </div>
-            <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Research Analyst 4</h3>
-                <span class="exp-date">Jan 2025 - Present</span>
-              </div>
-              <p class="exp-company">State of Oregon · United States</p>
-              <ul>
-                <li>Developed Python-based analytical functions that dynamically apply metadata-driven filters across key data fields, improving operational completeness metrics accuracy by 25% and enhancing root-cause visibility for EMS incidents.</li>
-                <li>Delivered actionable insights and performance metric reports for EMS agencies to leadership, highlighting operational trends and providing recommendations to guide key EMS initiatives and policy decisions.</li>
-              </ul>
-            </div>
-          </article>
+.hero-inner {
+  z-index: 1; 
+}
 
-          <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="H.V_impex_Inc.png" alt="H.V. Impex" class="company-logo">
-            </div>
-            <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Operational Data Analyst</h3>
-                <span class="exp-date">June 2024 - Jan 2025</span>
-              </div>
-              <p class="exp-company">H.V. Impex Inc · United States</p>
-              <ul>
-                <li>Collaborated with cross-functional teams to identify bottlenecks in ERP data flows, redesigning collection procedures and data validation checks that improved data consistency and KPI reporting accuracy by 30%.</li>
-                <li>Utilized Python for data manipulation and Tableau to develop dashboards tracking operational KPIs and store performance, improving data visibility for strategic decision-making.</li>
-                <li>Streamlined ERP data collection processes by developing SQL-based validation scripts and standardized data entry workflows, enhancing operational dashboard efficiency by 25%.</li>
-              </ul>
-            </div>
-          </article>
+.hero-eyebrow {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+  opacity: 0.95;
+  color: #ffffff;
+}
+.hero-name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.hero-rotating {
+  font-size: 1.5rem;
+  color: var(--primary); 
+  height: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.hero-subtext {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  opacity: 1; 
+  color: #ffffff; 
+  font-weight: 400;
+}
 
-          <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="Kent.png" alt="The Kent Group" class="company-logo">
-            </div>
-            <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Analyst</h3>
-                <span class="exp-date">July 2023 - June 2024</span>
-              </div>
-              <p class="exp-company">The Kent Group · United States</p>
-              <ul>
-                <li>Formulated business cases using SQL queries to analyze monthly operational performance metrics and perform root-cause analysis of inefficiencies in customers' buying patterns, resulting in a 12% increase in customer engagement metrics.</li>
-                <li>Employed advanced Microsoft Excel functions such as VLOOKUP and PivotTables to consolidate data from multiple sources, examine historical inventory trends and streamline order-picking, driving a 7% increase in inventory turnover rate.</li>
-                <li>Devised B2C strategies with cross-functional teams using statistical forecasting techniques and scenario analysis, enhancing evaluation of key cost drivers, financial models and pricing strategies and helping increase revenue by $1M.</li>
-              </ul>
-            </div>
-          </article>
+/* --- Hero CTA Button --- */
+.hero-cta {
+  margin-top: 35px;
+}
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.btn-hero:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #fff;
+  filter: brightness(1.1);
+}
 
-          <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="Cargo.png" alt="CargoSprint" class="company-logo">
-            </div>
-            <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Data Analyst & Business Intelligence Intern</h3>
-                <span class="exp-date">July 2022 - Sept 2022</span>
-              </div>
-              <p class="exp-company">CargoSprint · United States</p>
-              <ul>
-                <li>Automated ETL processes by extracting financial data from a data lake and integrating it into a large consolidated data warehouse using Azure SQL Instance and Databricks, saving 60 man-hours monthly.</li>
-                <li>Developed Power BI dashboards to visualize operations KPIs (fulfillment rates, turnaround time), enhancing decision-making by 20%.</li>
-                <li>Performed multiple ad-hoc financial analyses to extract insights from revenue data and market trends, aiding in informed strategy-making.</li>
-                <li>Acted as a single point of contact between senior executives and the client team by preparing business dashboards in Tableau, offering quantitative insights into the cost-revenue model.</li>
-              </ul>
-            </div>
-          </article>
+/* About Card */
+.about-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.about-left {
+  background-color: var(--bg-alt);
+  padding: 30px;
+  flex: 1 1 300px;
+  border-right: 1px solid var(--border);
+}
+.about-right {
+  padding: 30px;
+  flex: 2 1 400px;
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid var(--bg-color);
+}
+.profile-title {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+.about-skills-list h4 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+.skill-group {
+  margin-bottom: 15px;
+}
+.skill-group strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+.skill-group p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.about-details h4 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.about-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--text-light);
+}
+.about-details li {
+  margin-bottom: 8px;
+}
 
-          <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <div class="company-logo-placeholder">🏢</div>
-            </div>
-            <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Analyst</h3>
-                <span class="exp-date">June 2019 - Feb 2021</span>
-              </div>
-              <p class="exp-company">Jayant Pipe Syndicate · India</p>
-              <ul>
-                <li>Devised a data-driven operational plan incorporating performance metrics, pricing strategy and inventory forecasts to support new product launches, driving a 20% surge in sales.</li>
-                <li>Employed Lean methodology to optimize business workflows through iterative process flow mapping, facilitating continuous feedback and collaboration between clients and IT teams and reducing process error rates by 30%.</li>
-                <li>Leveraged Python data analysis techniques to craft data-driven presentations by integrating data cleaning, exploratory data analysis and trend identification.</li>
-                <li>Analyzed P&L and cost metrics to identify operational inefficiencies, leading to 14% revenue growth through process optimization.</li>
-                <li>Managed revenue forecasting and financial analysis using VBA macros in Excel, reducing data processing time by 25%.</li>
-              </ul>
-            </div>
-          </article>
+/* Cards (How I Help) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-        </div>
-      </div>
-    </section>
+/* --- Experience List Layout (Clean Row Style) --- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Key Projects</h2>
-        <p class="section-lead reveal">
-          A selection of analytical projects demonstrating predictive modeling, dashboard creation, and strategic insights.
-        </p>
+.exp-row {
+  display: flex;
+  gap: 25px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
 
-        <div class="gallery-grid">
-          
-          <article class="gallery-card reveal">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
-              <span class="gallery-icon">📊</span>
-            </div>
-            <div class="gallery-content">
-              <h3>CEO Analysis: Fortune 500 Companies</h3>
-              <p>Performed Exploratory Data Analysis on 10 CEOs via Tableau. Investigated approval ratings, compensation growth, and shareholder returns.</p>
-              <div class="project-buttons">
-                <a href="https://public.tableau.com/app/profile/kavish.shah/viz/Ceo_Analysis/CEOAnalysis" target="_blank" class="btn-project">View Dashboard</a>
-              </div>
-            </div>
-          </article>
+.exp-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 
-          <article class="gallery-card reveal">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);">
-              <span class="gallery-icon">🏠</span>
-            </div>
-            <div class="gallery-content">
-              <h3>Airbnb Analysis: Australia</h3>
-              <p>Analyzed customer preference patterns. Built predictive models (Decision Tree, Random Forest) with >90% accuracy. Developed a dashboard for availability insights.</p>
-              <div class="project-buttons">
-                <a href="https://public.tableau.com/app/profile/kavish.shah/viz/Airbnb_Basic_Analysis2/Dashboard1" target="_blank" class="btn-project">Dashboard</a>
-                <a href="https://drive.google.com/file/d/1SAyhGWLq2vRaVO1nZ2adMqN83jqnmzRz/view" target="_blank" class="btn-project">Report</a>
-                <a href="https://docs.google.com/presentation/d/17F6_gsogiSD5zLvoorjn2Znn_PB9ejdu/edit?rtpof=true&sd=true" target="_blank" class="btn-project">PPT</a>
-                <a href="https://github.com/kavishshah17/Airbnb-Availability-Prediction-/blob/main/Airbnb_Australia_Final.ipynb" target="_blank" class="btn-project">Code</a>
-              </div>
-            </div>
-          </article>
+.exp-logo-col {
+  flex-shrink: 0;
+}
 
-          <article class="gallery-card reveal">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);">
-              <span class="gallery-icon">🍿</span>
-            </div>
-            <div class="gallery-content">
-              <h3>BingeWatch Insights</h3>
-              <p>Dynamic dashboard for Netflix dataset using Advanced Filters. Unveils hidden trends in content distribution by country.</p>
-              <div class="project-buttons">
-                <a href="https://public.tableau.com/app/profile/kavish.shah/viz/BingeWatchInsightsADeepDiveintoNetflixOriginals/Netflix" target="_blank" class="btn-project">View Dashboard</a>
-              </div>
-            </div>
-          </article>
+.company-logo {
+  width: 80px;  
+  height: 80px; 
+  object-fit: contain; 
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-        </div>
-      </div>
-    </section>
+.company-logo-placeholder {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: var(--bg-alt);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
 
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Skills</h2>
-        <p class="section-lead reveal">Technical, analytical and business skills I use in my work.</p>
+.exp-content-col {
+  flex: 1;
+}
 
-        <div class="skills-grid">
-          <div class="skill-card reveal">
-            <h3>Technical Skills</h3>
-            <div class="skill-tags">
-              <span>Python</span>
-              <span>R</span>
-              <span>SQL</span>
-              <span>Power BI</span>
-              <span>Tableau</span>
-              <span>Salesforce</span>
-              <span>PostgreSQL</span>
-              <span>MS Excel</span>
-              <span>MS Office</span>
-            </div>
-          </div>
-          <div class="skill-card reveal delay-100">
-            <h3>Statistical Methods</h3>
-            <div class="skill-tags">
-              <span>Linear & Multiple Regression</span>
-              <span>Hypothesis Testing</span>
-              <span>A/B Testing</span>
-              <span>Decision Tree Analysis</span>
-              <span>Time Series Forecasting</span>
-            </div>
-          </div>
-          <div class="skill-card reveal delay-200">
-            <h3>Analytics & Business</h3>
-            <div class="skill-tags">
-              <span>Business Analysis</span>
-              <span>KPI Development</span>
-              <span>Forecasting</span>
-              <span>Reporting</span>
-              <span>Financial Modeling</span>
-              <span>Scenario Analysis</span>
-              <span>Risk Analysis</span>
-              <span>Customer Insights</span>
-            </div>
-          </div>
-          <div class="skill-card reveal">
-            <h3>Tools & Platforms</h3>
-            <div class="skill-tags">
-              <span>Azure</span>
-              <span>Databricks</span>
-              <span>Synapse</span>
-              <span>OLAP/Data Warehouse</span>
-              <span>Git</span>
-              <span>ERP Systems</span>
-              <span>BI Platforms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+.exp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
 
-    <section id="certs" class="section">
-      <div class="container">
-        <h2 class="reveal">Certifications</h2>
-        <div class="cert-grid reveal">
-          <div class="cert-card">
-            <h4><a href="https://www.credly.com/badges/0335c860-0ff3-48cb-9078-41e62e5f885c/linked_in_profile" target="_blank">McKinsey Forward Program</a></h4>
-            <p>McKinsey & Company</p>
-          </div>
-          <div class="cert-card">
-            <h4>Advanced Microsoft Excel</h4>
-            <p>Tata Steel</p>
-          </div>
-          <div class="cert-card">
-            <h4>Python for Data Science and AI</h4>
-            <p>IBM</p>
-          </div>
-          <div class="cert-card">
-            <h4>Python for Everybody</h4>
-            <p>Coursera</p>
-          </div>
-          <div class="cert-card">
-            <h4>Six Sigma: Green Belt</h4>
-            <p>LinkedIn</p>
-          </div>
-          <div class="cert-card">
-            <h4>SQL Fundamentals</h4>
-            <p>Datacamp</p>
-          </div>
-        </div>
-      </div>
-    </section>
+.exp-header-row h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
 
-    <section id="pubs" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Publications</h2>
-        <article class="exp-item reveal">
-            <h3><a href="https://www.youtube.com/watch?v=d8Jfaw7Z4p8&list=PLSnAaTy2cjSmEHFh-E8-rbv1_OJDRbo_0&index=39" target="_blank">District Cooling System with Solar-based Vapor Absorption Chiller</a></h3>
-            <p class="exp-meta">Presented at the MIT-Harvard Conference</p>
-            <ul>
-              <li>
-                Co-authored and presented a research paper on sustainable cooling systems.
-              </li>
-              <li>
-                Conducted financial analysis of the chiller system, leading to the development of a 
-                financial model that forecast the payback period, net present value, return on investment, 
-                and unit pricing.
-              </li>
-            </ul>
-        </article>
-      </div>
-    </section>
+.exp-date {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
 
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="reveal">Education</h2>
+.exp-company {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
 
-        <div class="education-timeline-center">
-          
-          <article class="edu-card-split reveal">
-            <h3>Master’s in Data Analytics</h3>
-            <p class="exp-meta">Northeastern University · Boston</p>
-            <br>
-            <p>
-              Focused on data analytics, statistical methods and practical applications in business
-              and decision-making.
-            </p>
-          </article>
+.exp-content-col ul {
+  margin-left: 20px;
+  color: var(--text-light);
+}
 
-          <article class="edu-card-split reveal">
-            <h3>Post Graduate Diploma in Business Analytics</h3>
-            <p class="exp-meta">Gujarat University</p>
-            <br>
-            <p>
-              Built a strong foundation in business analytics, reporting and data-driven decision support.
-            </p>
-          </article>
+.exp-content-col li {
+  margin-bottom: 8px;
+}
 
-          <article class="edu-card-split reveal">
-            <h3>Bachelor of Business Administration</h3>
-            <p class="exp-meta">
-              Ahmedabad University<br>
-              <strong>Specialization: Finance</strong>
-            </p>
-            <br>
-            <p>
-              Developed core knowledge in business, finance and management, forming the base for later
-              analytics and strategy work.
-            </p>
-          </article>
+@media (max-width: 600px) {
+  .exp-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .exp-header-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
 
-        </div>
-      </div>
-    </section>
+/* --- Projects Gallery Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
 
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Contact</h2>
-        <p class="section-lead reveal">
-          Open to roles and collaborations in business analytics, data analysis and financial analytics.
-        </p>
-        
-        <div class="contact-links reveal">
-          <p>Email: <a href="mailto:kavishshah1702@gmail.com">kavishshah1702@gmail.com</a></p>
-          <p>
-            Links:
-            <a href="https://github.com/kavishshah17" target="_blank">GitHub</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/kavishshah1702/" target="_blank">LinkedIn</a>
-          </p>
-        </div>
+.gallery-card {
+  background: var(--bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
 
-        <div class="tableau-container reveal delay-100">
-           <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="btn-tableau">
-             View My Tableau Visualizations
-           </a>
-        </div>
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-      </div>
-    </section>
-  </main>
+.gallery-img {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> · Kavish Shah · Portfolio</span>
-      <a href="#top">Back to top</a>
-    </div>
-  </footer>
+.gallery-icon {
+  font-size: 4rem;
+  opacity: 0.8;
+}
 
-  <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
+.gallery-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-  <script>
-    // Year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+.gallery-content h3 {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
 
-    // Theme toggle
-    const toggle = document.getElementById("theme-toggle");
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-      toggle.textContent = "☀️";
-    }
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const isDark = document.body.classList.contains("dark");
-      toggle.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
+.gallery-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
 
-    // Rotating roles text
-    const roles = [
-      "I am a Business Analyst.",
-      "I am a Data Analyst.",
-      "I am a Business Intelligence Analyst.",
-      "I am a Business Strategist."
-    ];
+/* Project Buttons */
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
 
-    const roleEl = document.getElementById("role-rotator");
-    let roleIndex = 0;
+.btn-project {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-light);
+  background-color: var(--bg-alt);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
 
-    function showNextRole() {
-      // restart animation
-      roleEl.classList.remove("fade-in");
-      void roleEl.offsetWidth; // force reflow
-      roleEl.classList.add("fade-in");
+.btn-project:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  text-decoration: none;
+}
 
-      roleEl.textContent = roles[roleIndex];
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
+/* --- Skills Tag Cloud --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
 
-    showNextRole();
-    setInterval(showNextRole, 2000); // change every 2 seconds
+.skill-card {
+  background: var(--bg-color);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s;
+}
 
-    // Scrollspy: highlight active menu link based on section in view
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+.skill-card:hover {
+  transform: translateY(-5px);
+}
 
-    function setActiveLink() {
-      let currentId = "";
-      const scrollPos = window.scrollY + 120; // offset so it triggers below header
+.skill-card h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--bg-alt);
+  padding-bottom: 10px;
+  display: inline-block;
+}
 
-      sections.forEach((section) => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-        if (scrollPos >= top && scrollPos < top + height) {
-          currentId = section.id;
-        }
-      });
+.skill-tags span {
+  background-color: var(--bg-alt);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: default;
+}
 
-      navLinks.forEach((link) => {
-        const href = link.getAttribute("href");
-        if (href === `#${currentId}`) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
-        }
-      });
-    }
+.skill-tags span:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
 
-    window.addEventListener("scroll", setActiveLink);
-    window.addEventListener("load", setActiveLink);
+body.dark .skill-tags span {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+body.dark .skill-tags span:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
 
-    // Scroll reveal animation script
-    const revealElements = document.querySelectorAll('.reveal');
+/* Certifications Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  background-color: var(--bg-alt);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease;
+}
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+.cert-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.cert-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target); 
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0.15,
-      rootMargin: "0px"
-    });
+/* --- OTHER ITEMS --- */
+.exp-item {
+  margin-bottom: 40px;
+  border-left: 3px solid var(--border);
+  padding-left: 20px;
+}
+.exp-item h3 {
+  margin-bottom: 5px;
+}
 
-    revealElements.forEach(el => revealObserver.observe(el));
+/* --- Education Vertical Timeline (Alternating/Center) --- */
+.education-timeline-center {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* The Line */
+.education-timeline-center::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--border);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Center the line exactly */
+  border-radius: 2px;
+}
+/* Items */
+.edu-card-split {
+  padding: 20px 30px;
+  position: relative;
+  background: var(--bg-color);
+  width: 45%; /* Leave space in middle */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 40px;
+  transition: transform 0.2s;
+}
+.edu-card-split:hover {
+  transform: translateY(-3px);
+}
+/* Left Side (Odd) */
+.edu-card-split:nth-child(odd) {
+  left: 0;
+}
+/* Right Side (Even) */
+.edu-card-split:nth-child(even) {
+  left: 55%; 
+}
+/* Dots */
+.edu-card-split::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -42px; /* Position for Left Cards */
+  background-color: var(--primary);
+  border: 4px solid var(--bg-color);
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 1px var(--border);
+}
+/* Fix Dot for Right Cards */
+.edu-card-split:nth-child(even)::after {
+  left: -42px;
+  right: auto;
+}
 
-    // --- Scroll Up Button Script ---
-    const scrollUpBtn = document.getElementById("scroll-up");
-    
-    if(scrollUpBtn) {
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 300) {
-            scrollUpBtn.classList.add("show");
-          } else {
-            scrollUpBtn.classList.remove("show");
-          }
-        });
+/* Mobile Timeline */
+@media (max-width: 768px) {
+  .education-timeline-center::after {
+    left: 20px; 
+  }
+  .edu-card-split {
+    width: 100%;
+    padding-left: 50px; 
+    padding-right: 20px;
+    left: 0 !important; 
+    margin-bottom: 30px;
+    border: none; 
+    box-shadow: none; 
+    background: transparent; 
+  }
+  .edu-card-split {
+    width: auto;
+    margin-left: 40px; 
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+  }
+  
+  .edu-card-split::after {
+    left: -49px !important; 
+    right: auto !important;
+  }
+}
 
-        scrollUpBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-    }
-  </script>
-</body>
-</html>
+/* Tableau Button */
+.tableau-container {
+  margin-top: 30px;
+}
+.btn-tableau {
+  display: inline-block;
+  background-color: #E97627;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(233, 118, 39, 0.2);
+}
+.btn-tableau:hover {
+  background-color: #d3651b;
+  text-decoration: none;
+  transform: translateY(-2px);
+  color: #fff;
+}
+body.dark .btn-tableau {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- Scroll Up Button (Bottom Left) --- */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;  
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+}
+.scroll-up-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-up-btn:hover {
+  transform: translateY(-5px);
+  background-color: #1d4ed8;
+}
+
+/* SCROLL ANIMATION STYLES */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-100 { transition-delay: 0.1s; }
+.reveal.delay-200 { transition-delay: 0.2s; }
