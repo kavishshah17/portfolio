@@ -110,17 +110,26 @@ a:hover {
   color: var(--text-color);
 }
 
+/* --- MOBILE FIX 1: Navigation --- */
 @media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
   .main-nav {
-    display: none; 
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
   }
 }
 
 /* --- HERO SECTION --- */
 
-/* Updated Images & Timing (7 seconds per image = 21s total loop) */
+/* Animation Images & Timing (7 seconds per image = 21s total loop) */
 @keyframes hero-slideshow {
-  /* Image 1: Laptop Dashboard (Keeping the one you liked) */
+  /* Image 1: Laptop Dashboard */
   0%, 30% {
     background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
   }
@@ -146,4 +155,363 @@ a:hover {
   justify-content: center;
   text-align: center;
   
-  /* FORCE WHITE TEXT for both Light and Dark modes
+  /* FORCE WHITE TEXT for both Light and Dark modes */
+  color: #ffffff !important; 
+  
+  /* 21 seconds total / 3 images = 7 seconds each */
+  animation: hero-slideshow 21s infinite;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Parallax effect for Desktop */
+  background-attachment: fixed; 
+  transition: background-image 1s ease-in-out; 
+}
+
+/* --- MOBILE FIX 2: Disable Parallax on Mobile --- */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; 
+    min-height: 60vh;
+  }
+  .hero-name {
+    font-size: 2.5rem; 
+  }
+  .hero-rotating {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark overlay for BOTH modes */
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 0;
+}
+
+.hero-inner {
+  z-index: 1; 
+}
+
+.hero-eyebrow {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+  opacity: 0.95;
+  color: #ffffff;
+}
+.hero-name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.hero-rotating {
+  font-size: 1.5rem;
+  color: var(--primary); 
+  height: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.hero-subtext {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  opacity: 1; 
+  color: #ffffff; 
+  font-weight: 400;
+}
+
+/* --- Hero CTA Button --- */
+.hero-cta {
+  margin-top: 35px;
+}
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.btn-hero:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #fff;
+  filter: brightness(1.1);
+}
+
+/* About Card */
+.about-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.about-left {
+  background-color: var(--bg-alt);
+  padding: 30px;
+  flex: 1 1 300px;
+  border-right: 1px solid var(--border);
+}
+.about-right {
+  padding: 30px;
+  flex: 2 1 400px;
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid var(--bg-color);
+}
+.profile-title {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+.about-skills-list h4 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+.skill-group {
+  margin-bottom: 15px;
+}
+.skill-group strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+.skill-group p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.about-details h4 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.about-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--text-light);
+}
+.about-details li {
+  margin-bottom: 8px;
+}
+
+/* Cards (How I Help) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--bg-color);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Experience & Education Items */
+.exp-item, .edu-item {
+  margin-bottom: 40px;
+  border-left: 3px solid var(--border);
+  padding-left: 20px;
+  position: relative;
+}
+.exp-item:last-child, .edu-item:last-child {
+  margin-bottom: 0;
+}
+.exp-item h3, .edu-item h3 {
+  margin-bottom: 5px;
+}
+.exp-meta {
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: -5px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body.dark .exp-meta {
+  color: #bbb;
+}
+@media (max-width: 600px) {
+  .exp-meta {
+    font-size: 0.9rem;
+  }
+}
+
+.exp-item ul {
+  margin-left: 20px;
+  margin-top: 10px;
+  color: var(--text-light);
+}
+.exp-item li {
+  margin-bottom: 8px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+.skills-grid h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.skills-grid p {
+  color: var(--text-light);
+}
+
+/* Certifications Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  background-color: var(--bg-alt);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease;
+}
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+.cert-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.cert-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Tableau Button */
+.tableau-container {
+  margin-top: 30px;
+}
+.btn-tableau {
+  display: inline-block;
+  background-color: #E97627;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(233, 118, 39, 0.2);
+}
+.btn-tableau:hover {
+  background-color: #d3651b;
+  text-decoration: none;
+  transform: translateY(-2px);
+  color: #fff;
+}
+body.dark .btn-tableau {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- Scroll Up Button (Bottom Left) --- */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;  /* Position: Bottom Left */
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+}
+.scroll-up-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-up-btn:hover {
+  transform: translateY(-5px);
+  background-color: #1d4ed8;
+}
+
+/* SCROLL ANIMATION STYLES */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-100 { transition-delay: 0.1s; }
+.reveal.delay-200 { transition-delay: 0.2s; }
