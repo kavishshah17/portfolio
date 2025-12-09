@@ -222,22 +222,16 @@ body.dark .nav-logo-img {
   max-width: 800px; 
 }
 
-/* Bottom Container for Button */
+/* Bottom Container for Text Link */
 .hero-bottom-container {
   position: absolute;
   bottom: 30px;
   left: 0;
   right: 0;
   z-index: 2;
-  text-align: left; /* Align button to left */
-  /* Padding matches the container class padding */
+  text-align: left; /* Align to left */
   padding-left: 20px; 
   padding-right: 20px;
-}
-
-/* Re-enable clicks on the button */
-.hero-cta {
-  pointer-events: auto;
 }
 
 .hero-eyebrow {
@@ -314,27 +308,20 @@ body.dark .nav-logo-img {
   color: #333;
 }
 
-/* --- Sleek Small Hero Button (Let's Connect) --- */
-.btn-hero-small {
-  display: inline-block;
-  /* Use Outline Style by default as requested */
-  background-color: transparent;
-  border: 2px solid #ffffff;
+/* --- UPDATED: Simple White Text Link (Let's Connect) --- */
+.hero-connect-text {
   color: #ffffff;
-  
-  padding: 8px 24px; /* Smaller padding */
-  border-radius: 50px;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 0.95rem; /* Smaller font */
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   text-decoration: none;
+  transition: opacity 0.3s;
+  border-bottom: 1px solid transparent; 
+  padding-bottom: 3px;
 }
-
-.btn-hero-small:hover {
-  background-color: #ffffff;
-  color: #333;
-  transform: translateY(-2px);
+.hero-connect-text:hover {
+  opacity: 0.9;
+  border-bottom: 1px solid #ffffff;
+  color: #fff;
 }
 
 /* About Card */
