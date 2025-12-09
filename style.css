@@ -323,25 +323,20 @@ body.dark .main-nav a.active {
   color: #333;
 }
 
-/* --- Sleek Small Hero Button (Let's Connect) --- */
-.btn-hero-small {
-  display: inline-block;
-  background-color: transparent;
-  border: 2px solid #ffffff;
+/* --- UPDATED: Simple White Text Link (Let's Connect) --- */
+.hero-connect-text {
   color: #ffffff;
-  padding: 8px 24px; 
-  border-radius: 50px;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 0.95rem; 
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   text-decoration: none;
+  transition: opacity 0.3s;
+  border-bottom: 1px solid transparent; 
+  padding-bottom: 3px;
 }
-
-.btn-hero-small:hover {
-  background-color: #ffffff;
-  color: #333;
-  transform: translateY(-2px);
+.hero-connect-text:hover {
+  opacity: 0.9;
+  border-bottom: 1px solid #ffffff;
+  color: #fff;
 }
 
 /* About Card */
