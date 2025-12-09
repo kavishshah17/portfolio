@@ -106,8 +106,10 @@ a:hover {
   transition: filter 0.3s;
 }
 
+/* Dark Mode Fix: Invert colors + Screen blend to remove black background box */
 body.dark .nav-logo-img {
-  filter: invert(1) brightness(200%);
+  filter: invert(1);
+  mix-blend-mode: screen; 
 }
 
 .main-nav {
@@ -168,9 +170,9 @@ body.dark .nav-logo-img {
   position: relative;
   min-height: 85vh;
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Allow vertical stacking of containers */
   justify-content: center;
-  text-align: left;
+  text-align: center; /* Center text by default */
   
   color: #ffffff !important; 
   
@@ -209,27 +211,28 @@ body.dark .nav-logo-img {
 /* Inner Container for Text (Vertically Centered) */
 .hero-inner {
   z-index: 1;
-  width: 100%;
-  height: 85vh; /* Match hero height */
+  flex: 1; /* Grow to fill space */
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertically center the text */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-text-content {
+  max-width: 800px; /* Constrain width for readability */
 }
 
 /* Bottom Container for Button */
 .hero-bottom-container {
   position: absolute;
-  bottom: 40px; /* Pin to bottom */
+  bottom: 30px;
   left: 0;
   right: 0;
   z-index: 2;
-  pointer-events: none; /* Let clicks pass through empty space */
-}
-
-/* Re-enable clicks on the button */
-.hero-cta-bottom {
-  pointer-events: auto;
-  padding-left: 20px; /* Align with container padding */
+  text-align: left; /* Align button to left */
+  /* Padding matches the container class padding */
+  padding-left: 20px; 
+  padding-right: 20px;
 }
 
 .hero-eyebrow {
@@ -256,49 +259,32 @@ body.dark .nav-logo-img {
 }
 .hero-subtext {
   max-width: 600px;
-  margin: 0 0 30px 0; 
+  margin: 0 auto 30px auto; 
   font-size: 1.15rem;
   opacity: 1; 
   color: #ffffff; 
   font-weight: 400;
 }
 
-/* Inline Button (How Can I Help) */
-.hero-cta-inline {
-  margin-top: 10px;
-}
-
-/* --- Hero CTA Button --- */
-.btn-hero {
+/* --- Sleek Small Hero Button --- */
+.btn-hero-small {
   display: inline-block;
   background-color: var(--primary);
   color: #ffffff;
-  padding: 12px 30px;
+  padding: 8px 24px; /* Smaller padding */
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.95rem; /* Smaller font */
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border: 2px solid var(--primary); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid var(--primary); 
+  text-decoration: none;
 }
 
-.btn-hero:hover {
-  transform: translateY(-3px);
-  text-decoration: none;
+.btn-hero-small:hover {
+  transform: translateY(-2px);
   color: #fff;
   filter: brightness(1.1);
-}
-
-/* Secondary Outline Button Style */
-.btn-hero-outline {
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-}
-
-.btn-hero-outline:hover {
-  background-color: #ffffff;
-  color: #333;
 }
 
 /* About Card */
