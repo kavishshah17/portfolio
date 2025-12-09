@@ -97,7 +97,7 @@ a:hover {
   justify-content: space-between;
 }
 
-/* Logo Styling with Dark Mode Fix */
+/* Logo Styling */
 .nav-logo-img {
   height: 40px; 
   width: auto;
@@ -170,7 +170,7 @@ body.dark .nav-logo-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   
   color: #ffffff !important; 
   
@@ -206,8 +206,30 @@ body.dark .nav-logo-img {
   z-index: 0;
 }
 
+/* Inner Container for Text (Vertically Centered) */
 .hero-inner {
-  z-index: 1; 
+  z-index: 1;
+  width: 100%;
+  height: 85vh; /* Match hero height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the text */
+}
+
+/* Bottom Container for Button */
+.hero-bottom-container {
+  position: absolute;
+  bottom: 40px; /* Pin to bottom */
+  left: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+/* Re-enable clicks on the button */
+.hero-cta-bottom {
+  pointer-events: auto;
+  padding-left: 20px; /* Align with container padding */
 }
 
 .hero-eyebrow {
@@ -234,22 +256,19 @@ body.dark .nav-logo-img {
 }
 .hero-subtext {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 0 30px 0; 
   font-size: 1.15rem;
   opacity: 1; 
   color: #ffffff; 
   font-weight: 400;
 }
 
-/* --- UPDATED: Hero CTA Buttons --- */
-.hero-cta {
-  margin-top: 35px;
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between buttons */
-  flex-wrap: wrap; /* Stack on small screens */
+/* Inline Button (How Can I Help) */
+.hero-cta-inline {
+  margin-top: 10px;
 }
 
+/* --- Hero CTA Button --- */
 .btn-hero {
   display: inline-block;
   background-color: var(--primary);
@@ -260,7 +279,7 @@ body.dark .nav-logo-img {
   font-size: 1.05rem;
   transition: all 0.2s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border: 2px solid var(--primary); /* Added border to match sizing */
+  border: 2px solid var(--primary); 
 }
 
 .btn-hero:hover {
@@ -377,7 +396,7 @@ body.dark .nav-logo-img {
   margin-bottom: 10px;
 }
 
-/* --- Experience List Layout (Clean Row Style) --- */
+/* --- Experience List Layout --- */
 .experience-list {
   display: flex;
   flex-direction: column;
@@ -612,7 +631,6 @@ body.dark .nav-logo-img {
   box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
 }
 
-/* Dark mode adjustments for skills */
 body.dark .skill-tags span {
   background-color: #2d2d2d;
   color: #e0e0e0;
@@ -649,7 +667,6 @@ body.dark .skill-tags span:hover {
 }
 
 /* --- OTHER ITEMS (Publications) --- */
-/* Default styling for single column items */
 .exp-item {
   margin-bottom: 40px;
   border-left: 3px solid var(--border);
@@ -750,69 +767,30 @@ body.dark .skill-tags span:hover {
   }
 }
 
-/* --- NEW: Tableau Profile Card --- */
-.tableau-card-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+/* --- NEW: Simple Tableau Button --- */
+.tableau-container {
+  margin-top: 30px;
+  text-align: center;
 }
-
-.tableau-profile-card {
-  display: flex;
-  align-items: center;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border);
-  padding: 15px 25px;
-  border-radius: 50px; /* Pill shape */
+.btn-tableau-simple {
+  display: inline-block;
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #E97627; /* Tableau Orange border */
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.2s;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  max-width: 450px;
-  width: 100%;
 }
-
-.tableau-profile-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.btn-tableau-simple:hover {
+  background-color: #E97627;
+  color: #fff;
   text-decoration: none;
-  border-color: #E97627; /* Tableau orange border on hover */
 }
-
-.tableau-logo-area {
-  background-color: #fcebd9; /* Light orange background */
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-}
-
-.tableau-icon-large {
-  font-size: 1.5rem;
-}
-
-.tableau-info {
-  flex: 1;
-}
-
-.tableau-info h4 {
-  margin: 0;
-  color: var(--text-color);
-  font-size: 1rem;
-}
-
-.tableau-info p {
-  margin: 0;
-  color: var(--text-light);
-  font-size: 0.85rem;
-}
-
-.tableau-arrow {
-  color: #E97627;
-  font-size: 1.2rem;
-  font-weight: bold;
+/* Dark Mode Fix for Tableau Button */
+body.dark .btn-tableau-simple {
+  color: #fff;
 }
 
 /* Footer */
