@@ -106,7 +106,7 @@ a:hover {
   transition: filter 0.3s;
 }
 
-/* Dark Mode Fix: mix-blend-mode: screen REMOVES the black box background */
+/* Dark Mode Fix for Logo (removes black box background) */
 body.dark .nav-logo-img {
   filter: invert(1);
   mix-blend-mode: screen; 
@@ -126,6 +126,16 @@ body.dark .nav-logo-img {
   color: var(--primary);
   text-decoration: none;
 }
+
+/* --- FIX: Make Nav Text White/Light in Dark Mode --- */
+body.dark .main-nav a {
+  color: #e0e0e0;
+}
+body.dark .main-nav a:hover,
+body.dark .main-nav a.active {
+  color: var(--primary);
+}
+
 .theme-toggle {
   background: none;
   border: none;
@@ -222,16 +232,21 @@ body.dark .nav-logo-img {
   max-width: 800px; 
 }
 
-/* Bottom Container for Text Link */
+/* Bottom Container for Button */
 .hero-bottom-container {
   position: absolute;
   bottom: 30px;
   left: 0;
   right: 0;
   z-index: 2;
-  text-align: left; /* Align to left */
+  text-align: left; /* Align button to left */
   padding-left: 20px; 
   padding-right: 20px;
+}
+
+/* Re-enable clicks on the button */
+.hero-cta {
+  pointer-events: auto;
 }
 
 .hero-eyebrow {
@@ -308,20 +323,25 @@ body.dark .nav-logo-img {
   color: #333;
 }
 
-/* --- UPDATED: Simple White Text Link (Let's Connect) --- */
-.hero-connect-text {
+/* --- Sleek Small Hero Button (Let's Connect) --- */
+.btn-hero-small {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #ffffff;
   color: #ffffff;
-  font-size: 1.1rem;
+  padding: 8px 24px; 
+  border-radius: 50px;
   font-weight: 600;
+  font-size: 0.95rem; 
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   text-decoration: none;
-  transition: opacity 0.3s;
-  border-bottom: 1px solid transparent; 
-  padding-bottom: 3px;
 }
-.hero-connect-text:hover {
-  opacity: 0.9;
-  border-bottom: 1px solid #ffffff;
-  color: #fff;
+
+.btn-hero-small:hover {
+  background-color: #ffffff;
+  color: #333;
+  transform: translateY(-2px);
 }
 
 /* About Card */
