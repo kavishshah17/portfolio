@@ -9,9 +9,11 @@
 <body id="top">
   <header class="top-nav">
     <div class="container nav-inner">
-      <a href="#top" class="logo-link">
-        <img src="KS.png" alt="Kavish Shah Logo" class="nav-logo-img" />
-      </a>
+      <div class="logo">
+        <a href="#top" class="logo-link">
+          <img src="KS.png" alt="Kavish Shah Logo" class="nav-logo-img" />
+        </a>
+      </div>
 
       <nav class="main-nav">
         <a href="#about">About</a>
@@ -32,25 +34,32 @@
   <main>
     <section class="hero">
       <div class="hero-overlay"></div> 
+      
       <div class="container hero-inner">
-        
-        <p class="hero-eyebrow reveal">Hi, I'm</p>
-        <h1 class="hero-name reveal delay-100">Kavish Shah</h1>
+        <div class="hero-text-content">
+          <p class="hero-eyebrow reveal">Hi, I'm</p>
+          <h1 class="hero-name reveal delay-100">Kavish Shah</h1>
 
-        <p class="hero-rotating reveal delay-200">
-          <span id="role-rotator"></span>
-        </p>
+          <p class="hero-rotating reveal delay-200">
+            <span id="role-rotator"></span>
+          </p>
 
-        <p class="hero-subtext reveal delay-200">
-          I transform raw data events into reliable, high-speed insights that drive actionable business strategy.
-        </p>
-        
-        <div class="hero-cta reveal delay-200">
-          <a href="#contact" class="btn-hero">Let's Connect</a>
-          <a href="#help" class="btn-hero btn-hero-outline">How Can I Help</a>
+          <p class="hero-subtext reveal delay-200">
+            I transform raw data events into reliable, high-speed insights that drive actionable business strategy.
+          </p>
+          
+          <div class="hero-cta-inline reveal delay-200">
+            <a href="#help" class="btn-hero btn-hero-outline">How Can I Help</a>
+          </div>
         </div>
-
       </div>
+
+      <div class="container hero-bottom-container">
+        <div class="hero-cta-bottom reveal delay-200">
+          <a href="#contact" class="btn-hero">Let's Connect</a>
+        </div>
+      </div>
+
     </section>
 
     <section id="about" class="section section-alt">
@@ -493,16 +502,9 @@
           </p>
         </div>
 
-        <div class="tableau-card-container reveal delay-100">
-           <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="tableau-profile-card">
-             <div class="tableau-logo-area">
-               <span class="tableau-icon-large">📊</span>
-             </div>
-             <div class="tableau-info">
-               <h4>Tableau Public Profile</h4>
-               <p>Explore my latest data visualizations and dashboards.</p>
-             </div>
-             <div class="tableau-arrow">→</div>
+        <div class="tableau-container reveal delay-100">
+           <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="btn-tableau-simple">
+             View My Tableau Visualizations
            </a>
         </div>
 
