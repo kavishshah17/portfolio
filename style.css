@@ -106,7 +106,7 @@ a:hover {
   transition: filter 0.3s;
 }
 
-/* Dark Mode Fix: Invert colors + Screen blend to remove black background box */
+/* Dark Mode Fix: mix-blend-mode: screen REMOVES the black box background */
 body.dark .nav-logo-img {
   filter: invert(1);
   mix-blend-mode: screen; 
@@ -170,9 +170,9 @@ body.dark .nav-logo-img {
   position: relative;
   min-height: 85vh;
   display: flex;
-  flex-direction: column; /* Allow vertical stacking of containers */
+  flex-direction: column; 
   justify-content: center;
-  text-align: center; /* Center text by default */
+  text-align: center; /* Centered Text */
   
   color: #ffffff !important; 
   
@@ -211,7 +211,7 @@ body.dark .nav-logo-img {
 /* Inner Container for Text (Vertically Centered) */
 .hero-inner {
   z-index: 1;
-  flex: 1; /* Grow to fill space */
+  flex: 1; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,7 +219,7 @@ body.dark .nav-logo-img {
 }
 
 .hero-text-content {
-  max-width: 800px; /* Constrain width for readability */
+  max-width: 800px; 
 }
 
 /* Bottom Container for Button */
@@ -230,9 +230,13 @@ body.dark .nav-logo-img {
   right: 0;
   z-index: 2;
   text-align: left; /* Align button to left */
-  /* Padding matches the container class padding */
   padding-left: 20px; 
   padding-right: 20px;
+}
+
+/* Re-enable clicks on the button */
+.hero-cta {
+  pointer-events: auto;
 }
 
 .hero-eyebrow {
@@ -266,7 +270,50 @@ body.dark .nav-logo-img {
   font-weight: 400;
 }
 
-/* --- Sleek Small Hero Button --- */
+/* Inline Button (How Can I Help) */
+.hero-cta-inline {
+  margin-top: 10px;
+}
+
+/* --- Hero Buttons --- */
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 2px solid var(--primary); 
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #fff;
+  filter: brightness(1.1);
+}
+
+/* Secondary Outline Button Style (How Can I Help) */
+.btn-hero-outline {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.btn-hero-outline:hover {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* --- Sleek Small Hero Button (Let's Connect) --- */
 .btn-hero-small {
   display: inline-block;
   background-color: var(--primary);
@@ -753,30 +800,31 @@ body.dark .skill-tags span:hover {
   }
 }
 
-/* --- NEW: Simple Tableau Button --- */
+/* --- NEW: Simple Tableau Button (Text Link) --- */
 .tableau-container {
   margin-top: 30px;
   text-align: center;
 }
-.btn-tableau-simple {
+.simple-text-link {
   display: inline-block;
-  background-color: transparent;
-  color: #333;
-  border: 2px solid #E97627; /* Tableau Orange border */
-  padding: 10px 25px;
-  border-radius: 5px;
+  color: var(--primary);
+  font-size: 1.1rem;
   font-weight: 600;
-  transition: all 0.2s;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.simple-text-link .arrow {
+  margin-left: 5px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.simple-text-link:hover {
+  border-bottom-color: var(--primary);
   text-decoration: none;
 }
-.btn-tableau-simple:hover {
-  background-color: #E97627;
-  color: #fff;
-  text-decoration: none;
-}
-/* Dark Mode Fix for Tableau Button */
-body.dark .btn-tableau-simple {
-  color: #fff;
+.simple-text-link:hover .arrow {
+  transform: translateX(3px);
 }
 
 /* Footer */
