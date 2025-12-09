@@ -230,6 +230,7 @@ body.dark .nav-logo-img {
   right: 0;
   z-index: 2;
   text-align: left; /* Align button to left */
+  /* Padding matches the container class padding */
   padding-left: 20px; 
   padding-right: 20px;
 }
@@ -316,22 +317,24 @@ body.dark .nav-logo-img {
 /* --- Sleek Small Hero Button (Let's Connect) --- */
 .btn-hero-small {
   display: inline-block;
-  background-color: var(--primary);
+  /* Use Outline Style by default as requested */
+  background-color: transparent;
+  border: 2px solid #ffffff;
   color: #ffffff;
+  
   padding: 8px 24px; /* Smaller padding */
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem; /* Smaller font */
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  border: 1px solid var(--primary); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   text-decoration: none;
 }
 
 .btn-hero-small:hover {
+  background-color: #ffffff;
+  color: #333;
   transform: translateY(-2px);
-  color: #fff;
-  filter: brightness(1.1);
 }
 
 /* About Card */
