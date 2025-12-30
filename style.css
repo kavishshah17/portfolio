@@ -370,7 +370,7 @@ body.dark .main-nav a.active {
 
 /* --- BRAND STORY PARAGRAPH STYLE --- */
 .exp-narrative {
-  margin-bottom: 25px; /* INCREASED SPACE HERE */
+  margin-bottom: 25px; 
   color: var(--text-color); 
   font-style: italic; 
   line-height: 1.6;
@@ -443,7 +443,28 @@ body.dark .skill-tags span:hover { background-color: var(--primary); color: #fff
 .footer { padding: 40px 0; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-light); }
 .footer-inner { display: flex; justify-content: space-between; }
 
-.scroll-up-btn { position: fixed; bottom: 30px; left: 30px; background-color: var(--primary); color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; z-index: 999; }
+/* --- UPDATED: Scroll Up Button (Bottom Right) --- */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px; /* CHANGED FROM LEFT TO RIGHT */
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+}
 .scroll-up-btn.show { opacity: 1; visibility: visible; }
 .scroll-up-btn:hover { transform: translateY(-5px); background-color: #1d4ed8; }
 
