@@ -368,9 +368,9 @@ body.dark .main-nav a.active {
 .exp-content-col ul { margin-left: 20px; color: var(--text-light); }
 .exp-content-col li { margin-bottom: 8px; }
 
-/* BRAND STORY PARAGRAPH */
+/* --- BRAND STORY PARAGRAPH STYLE --- */
 .exp-narrative {
-  margin-bottom: 15px; 
+  margin-bottom: 25px; /* INCREASED SPACE HERE */
   color: var(--text-color); 
   font-style: italic; 
   line-height: 1.6;
