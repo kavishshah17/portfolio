@@ -174,6 +174,7 @@ body.dark .main-nav a.active {
   .logo { order: 2; }
   .theme-toggle { order: 3; }
 
+  /* Drawer Menu (Left Side) */
   .main-nav {
     position: fixed;
     top: 0;
@@ -187,18 +188,21 @@ body.dark .main-nav a.active {
     padding-left: 30px;
     gap: 25px;
     box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    /* Hidden by default (Left) */
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1050;
   }
 
+  /* Slide in when active */
   .main-nav.nav-open { transform: translateX(0); }
 
+  /* Icon Animation */
   .mobile-menu-btn.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
   .mobile-menu-btn.active .bar:nth-child(2) { opacity: 0; }
   .mobile-menu-btn.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
   
-  /* Mobile Typography Fixes */
+  /* Mobile Layout Fixes */
   .hero-name { font-size: 2.5rem; }
   .exp-row { flex-direction: column; gap: 15px; }
   .footer-inner { flex-direction: column; align-items: center; gap: 10px; }
@@ -221,10 +225,10 @@ body.dark .main-nav a.active {
   justify-content: center;
   text-align: center;
   color: #ffffff !important; 
-  overflow: hidden; /* Ensures the pseudo-element stays contained */
+  overflow: hidden; /* Contains the background */
 }
 
-/* Use Pseudo-element for Background to fix Mobile Blur */
+/* Pseudo-element for Background (Solves the mobile blur) */
 .hero::before {
   content: "";
   position: absolute;
@@ -232,17 +236,25 @@ body.dark .main-nav a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Behind content */
+  z-index: 0; 
   background-size: cover;
   background-position: center;
   animation: hero-slideshow 21s infinite;
   
-  /* Desktop: Fixed creates parallax */
+  /* DESKTOP: Fixed creates the cool parallax effect */
   background-attachment: fixed;
-  will-change: transform; /* Performance optimization */
+  will-change: transform; 
 }
 
-/* Overlay sits on top of the background image */
+/* MOBILE FIX: Disable fixed background to prevent zoom/blur */
+@media (max-width: 768px) {
+  .hero::before {
+    background-attachment: scroll !important;
+    background-position: center top !important; /* Helps center faces/content */
+    height: 100%;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -250,7 +262,6 @@ body.dark .main-nav a.active {
   z-index: 1;
 }
 
-/* Content sits on top of overlay */
 .hero-inner {
   z-index: 2;
   flex: 1; 
@@ -261,16 +272,6 @@ body.dark .main-nav a.active {
 }
 
 .hero-text-content { max-width: 800px; }
-
-/* Mobile Specific Hero Fixes */
-@media (max-width: 768px) {
-  .hero::before {
-    /* Mobile: Scroll prevents zoom/blur issues */
-    background-attachment: scroll !important;
-    /* Ensure height matches container */
-    height: 100%;
-  }
-}
 
 .hero-bottom-container {
   position: absolute;
@@ -366,6 +367,19 @@ body.dark .main-nav a.active {
 .exp-company { color: var(--primary); font-weight: 600; font-size: 1rem; margin-bottom: 12px; }
 .exp-content-col ul { margin-left: 20px; color: var(--text-light); }
 .exp-content-col li { margin-bottom: 8px; }
+
+/* BRAND STORY PARAGRAPH */
+.exp-narrative {
+  margin-bottom: 15px; 
+  color: var(--text-color); 
+  font-style: italic; 
+  line-height: 1.6;
+  border-left: 3px solid var(--primary);
+  padding-left: 15px;
+  background-color: var(--bg-alt);
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+}
 
 /* Projects */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
