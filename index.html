@@ -10,6 +10,7 @@
   
   <header class="top-nav">
     <div class="container nav-inner">
+      
       <button class="mobile-menu-btn" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -68,7 +69,7 @@
       <div class="container">
         <h2 class="reveal">About me</h2>
         <p class="section-lead reveal">
-          Analytical professional leveraging business acumen and technical expertise to solve complex business problems through rigorous analysis and impactful visualizations.
+          Analytical professional leveraging business acumen and technical expertise to solve complex business problems.
         </p>
 
         <div class="about-card reveal">
@@ -98,6 +99,7 @@
               </div>
             </div>
           </div>
+
           <div class="about-right">
             <p>
               I work across business analysis, data analytics and financial modeling to help organizations
@@ -115,6 +117,7 @@
                 <li>Designing actionable dashboards in Power BI and Tableau.</li>
                 <li>Financial forecasting, scenario analysis, and risk assessment.</li>
                 <li>Root-cause analysis to identify operational bottlenecks.</li>
+                <li>Translating raw data into business strategies for stakeholders.</li>
               </ul>
             </div>
           </div>
@@ -122,31 +125,50 @@
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section section-alt">
       <div class="container">
-        <h2 class="reveal">Skills Grid</h2>
+        <h2 class="reveal">Technical Expertise</h2>
         <div class="skills-grid">
+          
           <div class="skill-card reveal">
-            <h3>Decision Intelligence</h3>
+            <h3>Decision Intelligence & Modeling</h3>
             <div class="skill-tags">
               <span>Predictive Modelling</span><span>Risk Analysis</span><span>Customer Insights</span><span>KPIs</span><span>Trend Analysis</span>
             </div>
           </div>
+
           <div class="skill-card reveal delay-100">
-            <h3>Technical</h3>
+            <h3>Technical Skills</h3>
             <div class="skill-tags">
-              <span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Databricks</span>
+              <span>Python</span><span>R</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>PostgreSQL</span>
             </div>
           </div>
+          
+          <div class="skill-card reveal delay-200">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-tags">
+              <span>Azure</span><span>Databricks</span><span>Synapse</span><span>Git</span><span>Salesforce</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    </main>
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="reveal">Contact</h2>
+        <div class="contact-links reveal">
+          <p>Email: <a href="mailto:kavishshah1702@gmail.com">kavishshah1702@gmail.com</a></p>
+          <p>Links: <a href="https://github.com/kavishshah17" target="_blank">GitHub</a><span> · </span><a href="https://www.linkedin.com/in/kavishshah1702/" target="_blank">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> · Kavish Shah · Portfolio</span>
+      <span>© <span id="year"></span> · Kavish Shah</span>
       <a href="#top">Back to top</a>
     </div>
   </footer>
@@ -154,22 +176,18 @@
   <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
 
   <script>
-    // Set Year
+    // Year logic
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme Toggle Logic
+    // Theme Toggle logic
     const toggle = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Check localStorage, but default to 'dark' if nothing is found
-    const currentTheme = localStorage.getItem("theme") || "dark";
-    
-    if (currentTheme === "light") {
+    // Load saved preference or default to dark
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    if (savedTheme === "light") {
       body.classList.remove("dark");
       toggle.textContent = "🌙";
-    } else {
-      body.classList.add("dark");
-      toggle.textContent = "☀️";
     }
 
     toggle.addEventListener("click", () => {
@@ -179,7 +197,7 @@
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 
-    // Mobile Menu Toggle
+    // Mobile Menu
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
     if(mobileBtn) {
@@ -190,7 +208,7 @@
     }
 
     // Role Rotator
-    const roles = ["I am a Business Analyst.", "I am a Data Analyst.", "I am a Decision Intelligence Expert.", "I am a Business Strategist."];
+    const roles = ["I am a Business Analyst.", "I am a Data Analyst.", "I am a Decision Intelligence Strategist.", "I am a Business Strategist."];
     const roleEl = document.getElementById("role-rotator");
     let roleIndex = 0;
     function rotateRole() {
@@ -203,14 +221,16 @@
     rotateRole();
     setInterval(rotateRole, 2500);
 
-    // Reveal on Scroll
-    const reveals = document.querySelectorAll('.reveal');
+    // Reveal Logic
+    const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('active');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
       });
     }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+    revealElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
