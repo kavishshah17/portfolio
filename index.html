@@ -74,7 +74,7 @@
       <div class="container">
         <h2 class="reveal">About me</h2>
         <p class="section-lead reveal">
-          An analytical professional leveraging business acumen to turn raw data into business clarity through rigorous analysis, statistical modeling, and impactful visualization.
+          Analytical professional leveraging business acumen and technical expertise to solve complex business problems by transforming raw data into actionable insights through rigorous analysis, statistical modeling, and impactful visualizations.
         </p>
 
         <div class="about-card reveal">
@@ -91,8 +91,12 @@
                 <p>Python, R, SQL, Power BI, Tableau, Salesforce, PostgreSQL, MS Excel</p>
               </div>
               <div class="skill-group">
+                <strong>Business Analysis Competency</strong>
+                <p>Stakeholder Management, Process Improvement, KPI Reporting, UAT Validation, Scrum Support</p>
+              </div>
+              <div class="skill-group">
                 <strong>Analytics</strong>
-                <p>KPI Development, Forecasting, Financial Modeling, Risk Analysis, Customer Insights</p>
+                <p>Forecasting, Financial Modeling, Risk Analysis, Customer Insights</p>
               </div>
               <div class="skill-group">
                 <strong>Tools</strong>
@@ -372,10 +376,45 @@
         <h2 class="reveal">Skills</h2>
         <p class="section-lead reveal">Technical, analytical and business skills I use in my work.</p>
         <div class="skills-grid">
-          <div class="skill-card reveal"><h3>Technical Skills</h3><div class="skill-tags"><span>Python</span><span>R</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Salesforce</span><span>PostgreSQL</span><span>MS Excel</span><span>MS Office</span></div></div>
-          <div class="skill-card reveal delay-100"><h3>Statistical Methods</h3><div class="skill-tags"><span>Linear & Multiple Regression</span><span>Hypothesis Testing</span><span>A/B Testing</span><span>Decision Tree Analysis</span><span>Time Series Forecasting</span></div></div>
-          <div class="skill-card reveal delay-200"><h3>Analytics & Business</h3><div class="skill-tags"><span>Business Analysis</span><span>KPI Development</span><span>Forecasting</span><span>Reporting</span><span>Financial Modeling</span><span>Scenario Analysis</span><span>Risk Analysis</span><span>Customer Insights</span></div></div>
-          <div class="skill-card reveal"><h3>Tools & Platforms</h3><div class="skill-tags"><span>Azure</span><span>Databricks</span><span>Synapse</span><span>OLAP/Data Warehouse</span><span>Git</span><span>ERP Systems</span><span>BI Platforms</span></div></div>
+          
+          <div class="skill-card reveal">
+            <h3>Technical Skills</h3>
+            <div class="skill-tags">
+              <span>Python</span><span>R</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Salesforce</span><span>PostgreSQL</span><span>MS Excel</span><span>MS Office</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal delay-100">
+            <h3>Business Analysis Competency</h3>
+            <div class="skill-tags">
+              <span>Stakeholder Management</span>
+              <span>Business Process Improvement</span>
+              <span>KPI & Performance Reporting</span>
+              <span>UAT Validation</span>
+              <span>Scrum Support</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal delay-200">
+            <h3>Financial & Operational Analytics</h3>
+            <div class="skill-tags">
+              <span>KPI Development</span><span>Forecasting</span><span>Reporting</span><span>Financial Modeling</span><span>Scenario Analysis</span><span>Risk Analysis</span><span>Customer Insights</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Statistical Methods</h3>
+            <div class="skill-tags">
+              <span>Linear & Multiple Regression</span><span>Hypothesis Testing</span><span>A/B Testing</span><span>Decision Tree Analysis</span><span>Time Series Forecasting</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-tags">
+              <span>Azure</span><span>Databricks</span><span>Synapse</span><span>OLAP/Data Warehouse</span><span>Git</span><span>ERP Systems</span><span>BI Platforms</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -428,7 +467,7 @@
           <p>Links: <a href="https://github.com/kavishshah17" target="_blank">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/kavishshah1702/" target="_blank">LinkedIn</a></p>
         </div>
         <div class="tableau-container reveal delay-100">
-           <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="simple-text-link">View Tableau Profile <span class="arrow">→</span></a>
+            <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="simple-text-link">View Tableau Profile <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -444,7 +483,7 @@
   <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
 
   <script>
-    // Year
+    // Year logic
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Theme Toggle
@@ -460,10 +499,9 @@
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 
-    // Mobile Menu Logic (Hamburger)
+    // Mobile Menu
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
-    
     if(mobileBtn) {
         mobileBtn.addEventListener('click', () => {
           mobileBtn.classList.toggle('active');
@@ -471,7 +509,7 @@
         });
     }
 
-    // Close menu when clicking link
+    // Nav closing
     const navLinks = document.querySelectorAll('.main-nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -483,17 +521,12 @@
     });
 
     // Roles Animation
-    const roles = [
-      "I am a Business Analyst.",
-      "I am a Data Analyst.",
-      "I am a Business Intelligence Analyst.",
-      "I am a Business Strategist."
-    ];
+    const roles = ["I am a Business Analyst.", "I am a Data Analyst.", "I am a Business Intelligence Analyst.", "I am a Business Strategist."];
     const roleEl = document.getElementById("role-rotator");
     let roleIndex = 0;
     function showNextRole() {
       roleEl.classList.remove("fade-in");
-      void roleEl.offsetWidth; // trigger reflow
+      void roleEl.offsetWidth; 
       roleEl.classList.add("fade-in");
       roleEl.textContent = roles[roleIndex];
       roleIndex = (roleIndex + 1) % roles.length;
@@ -524,9 +557,8 @@
       });
     }
     window.addEventListener("scroll", setActiveLink);
-    window.addEventListener("load", setActiveLink);
 
-    // Reveal on Scroll
+    // Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -538,20 +570,13 @@
     }, { root: null, threshold: 0.15 });
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Scroll Up Button
+    // Scroll Up
     const scrollUpBtn = document.getElementById("scroll-up");
-    if(scrollUpBtn) {
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 300) {
-            scrollUpBtn.classList.add("show");
-          } else {
-            scrollUpBtn.classList.remove("show");
-          }
-        });
-        scrollUpBtn.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) scrollUpBtn.classList.add("show");
+      else scrollUpBtn.classList.remove("show");
+    });
+    scrollUpBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   </script>
 </body>
 </html>
