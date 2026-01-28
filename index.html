@@ -10,7 +10,6 @@
   
   <header class="top-nav">
     <div class="container nav-inner">
-      
       <button class="mobile-menu-btn" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -43,26 +42,21 @@
   <main>
     <section class="hero">
       <div class="hero-overlay"></div> 
-      
       <div class="container hero-inner">
         <div class="hero-text-content">
           <p class="hero-eyebrow reveal">Hi, I'm</p>
           <h1 class="hero-name reveal delay-100">Kavish Shah</h1>
-
           <p class="hero-rotating reveal delay-200">
             <span id="role-rotator"></span>
           </p>
-
           <p class="hero-subtext reveal delay-200">
             I transform raw data events into reliable, high-speed insights that drive actionable business strategy.
           </p>
-          
           <div class="hero-cta-inline reveal delay-200">
             <a href="#help" class="btn-hero btn-hero-outline">How Can I Help</a>
           </div>
         </div>
       </div>
-
       <div class="hero-bottom-container">
         <div class="container">
           <a href="#contact" class="hero-connect-text">Let's Connect</a>
@@ -74,7 +68,7 @@
       <div class="container">
         <h2 class="reveal">About me</h2>
         <p class="section-lead reveal">
-          Analytical professional leveraging business acumen and technical expertise to solve complex business problems by transforming raw data into actionable insights through rigorous analysis, statistical modeling, and impactful visualizations.
+          Analytical professional leveraging business acumen and technical expertise to solve complex business problems.
         </p>
 
         <div class="about-card reveal">
@@ -104,34 +98,39 @@
               </div>
             </div>
           </div>
+
           <div class="about-right">
-            <p style="text-align: justify;">
-              I work across business analysis, data analytics and financial modeling to help organizations
-              make informed decisions. My experience spans forecasting, reporting, operational analysis,
-              dashboard development and translating complex datasets into practical insights for business teams.
-            </p>
-            <p style="text-align: justify;">
-              I enjoy solving ambiguous business problems, optimizing workflows and supporting strategic decisions
-              using clear data storytelling. I’ve worked across multiple industries, which has sharpened my 
-              adaptability and ability to quickly grasp industry-specific nuances.
-            </p>
-            <div class="about-details">
-              <h4>Expertise in</h4>
-              <ul>
-                <li>Designing actionable dashboards in Power BI and Tableau.</li>
-                <li>Financial forecasting, scenario analysis, and risk assessment.</li>
-                <li>Root-cause analysis to identify operational bottlenecks.</li>
-                <li>Translating raw data into business strategies for stakeholders.</li>
-              </ul>
-              <h4>Key deliverables</h4>
-              <ul>
-                <li>Improved operational completeness metrics by 25% through Python-based dynamic filtering.</li>
-                <li>Redesigned data validation checks improving KPI reporting accuracy by 30%.</li>
-                <li>Supported strategy to increase revenue by $1M through statistical forecasting.</li>
-                <li>Automated ETL processes saving 60 man-hours monthly via Azure and Databricks.</li>
-                <li>Optimized supply chain workflows leading to a 20% surge in sales.</li>
-              </ul>
+            <div id="bio-container" class="bio-collapsed">
+              <p style="text-align: justify;">
+                I work across business analysis, data analytics and financial modeling to help organizations
+                make informed decisions. My experience spans forecasting, reporting, operational analysis,
+                dashboard development and translating complex datasets into practical insights for business teams.
+              </p>
+              <p style="text-align: justify;">
+                I enjoy solving ambiguous business problems, optimizing workflows and supporting strategic decisions
+                using clear data storytelling. I’ve worked across multiple industries, which has sharpened my 
+                adaptability and ability to quickly grasp industry-specific nuances.
+              </p>
+              
+              <div class="about-details">
+                <h4>Expertise in</h4>
+                <ul>
+                  <li>Designing actionable dashboards in Power BI and Tableau.</li>
+                  <li>Financial forecasting, scenario analysis, and risk assessment.</li>
+                  <li>Root-cause analysis to identify operational bottlenecks.</li>
+                  <li>Translating raw data into business strategies for stakeholders.</li>
+                </ul>
+                <h4>Key deliverables</h4>
+                <ul>
+                  <li>Improved operational completeness metrics by 25% through Python-based dynamic filtering.</li>
+                  <li>Redesigned data validation checks improving KPI reporting accuracy by 30%.</li>
+                  <li>Supported strategy to increase revenue by $1M through statistical forecasting.</li>
+                  <li>Automated ETL processes saving 60 man-hours monthly via Azure and Databricks.</li>
+                  <li>Optimized supply chain workflows leading to a 20% surge in sales.</li>
+                </ul>
+              </div>
             </div>
+            <button id="read-more-btn" class="btn-read-more">Read More</button>
           </div>
         </div>
       </div>
@@ -140,33 +139,18 @@
     <section id="help" class="section section-alt">
       <div class="container">
         <h2 class="reveal">How I can help</h2>
-        <p class="section-lead reveal">
-          Areas where I bring the most value, combining business context with analytical depth.
-        </p>
         <div class="cards">
           <article class="card reveal">
             <h3>Business & Data Intelligence</h3>
-            <p class="tagline">KPIs · Dashboards · Root-cause analysis</p>
-            <p>
-              Defining and tracking KPIs, building dashboards and running deep dives that explain what’s
-              happening in the business, why it’s happening and what to do next.
-            </p>
+            <p>Defining and tracking KPIs, building dashboards and running deep dives that explain business performance.</p>
           </article>
           <article class="card reveal delay-100">
             <h3>Financial & Operational Analytics</h3>
-            <p class="tagline">Forecasting · Performance · Optimization</p>
-            <p>
-              Using financial data, forecasting techniques and operational metrics to improve performance,
-              evaluate initiatives and support planning and resource allocation.
-            </p>
+            <p>Using financial data and forecasting techniques to improve performance and support planning.</p>
           </article>
           <article class="card reveal delay-200">
             <h3>Strategy & Decision Support</h3>
-            <p class="tagline">Scenario analysis · Risk · Growth</p>
-            <p>
-              Supporting decision-making with scenario analysis, risk assessment and data-backed
-              recommendations aligned with business objectives and long-term strategy.
-            </p>
+            <p>Supporting decision-making with scenario analysis and risk assessment aligned with objectives.</p>
           </article>
         </div>
       </div>
@@ -175,154 +159,80 @@
     <section id="experience" class="section">
       <div class="container">
         <h2 class="reveal">Professional Experience</h2>
-        <p class="section-lead reveal">
-          Roles where I applied business analysis, data analytics and financial insights to drive impact.
-        </p>
-        
         <div class="experience-list">
-          
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="State_of_Oregon.png" alt="State of Oregon" class="company-logo">
-            </div>
+            <div class="exp-logo-col"><img src="State_of_Oregon.png" alt="State of Oregon" class="company-logo"></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Research Analyst 4</h3>
-                <span class="exp-date">Jan 2025 - Present</span>
-              </div>
+              <div class="exp-header-row"><h3>Research Analyst 4</h3><span class="exp-date">Jan 2025 - Present</span></div>
               <p class="exp-company">State of Oregon · United States</p>
-              
-              <p class="exp-narrative">
-                As the lead data resource for the EMS leadership team, I modernize legacy reporting systems into automated, data-driven workflows. I utilize <strong>SQL and Python</strong> to clean and structure complex licensing datasets, transforming fragmented public health data into reliable metrics that directly inform statewide emergency response policy.
-              </p>
-
+              <p class="exp-narrative">I utilize SQL and Python to clean complex licensing datasets, informing statewide emergency response policy.</p>
               <ul>
-                <li>Guided State Leadership in executing a statewide EMS strategy by transforming complex datasets into story-driven insights using SQL.</li>
-                <li>Partnered with state leadership to implement a dynamic R Shiny dashboard that calculated completeness metrics and identified root causes of missing records, improving data accuracy by 20%.</li>
-                <li>Automated the extraction of 50,000+ EMS Agency emails by engineering a Python script to mine internal directories, eliminating 200+ hours of manual search time annually.</li>
-                <li>Orchestrated a team hackathon to consolidate analytical questions and licensing KPIs, reducing dashboard deployment time by 30%.</li>
+                <li>Guided State Leadership in executing EMS strategy using SQL.</li>
+                <li>Improved data accuracy by 20% via R Shiny dashboard.</li>
+                <li>Automated extraction of 50,000+ emails using Python.</li>
               </ul>
             </div>
           </article>
-
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="Beeup.png" alt="Beeup" class="company-logo">
-            </div>
+            <div class="exp-logo-col"><img src="Beeup.png" alt="Beeup" class="company-logo"></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Consultant</h3>
-                <span class="exp-date">Sept 2023 - Present</span>
-              </div>
+              <div class="exp-header-row"><h3>Business Consultant</h3><span class="exp-date">Sept 2023 - Present</span></div>
               <p class="exp-company">Beeup · Switzerland</p>
-              
-              <p class="exp-narrative">
-                In this global consulting role, I bridged the gap between engineering constraints and market viability for manufacturing clients. My focus was on validating high-stakes expansion plans through <strong>financial modeling and demand forecasting</strong>, coordinating cross-functional teams across 12 countries to deliver investment-ready business cases.
-              </p>
-
+              <p class="exp-narrative">Coordinating cross-functional teams across 12 countries to deliver investment-ready business cases.</p>
               <ul>
-                <li>Spearheaded an expansion strategy for an electric kit manufacturer featuring data-backed market analysis and demand forecasting, identifying $1.5M in potential revenue growth.</li>
-                <li>Led end-to-end development of global business cases across 12+ countries by aligning financial models and market insights to deliver strategic solutions.</li>
-                <li>Guided market entry and investment planning for a plastic injection client by analyzing niche opportunities and financial feasibility, validating a $2–3M investment with $15–20M revenue potential.</li>
-                <li>Mentored 10 global teams analyzing AI’s impact on the workforce via job role mapping, SWOT Analysis, and business model redesign.</li>
+                <li>Identified $1.5M in potential revenue growth.</li>
+                <li>Validated $2–3M investments with high revenue potential.</li>
               </ul>
             </div>
           </article>
-
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="H.V_impex_Inc.png" alt="H.V. Impex" class="company-logo">
-            </div>
+            <div class="exp-logo-col"><img src="H.V_impex_Inc.png" alt="H.V. Impex" class="company-logo"></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Strategy Analyst</h3>
-                <span class="exp-date">June 2024 - Jan 2025</span>
-              </div>
+              <div class="exp-header-row"><h3>Business Strategy Analyst</h3><span class="exp-date">June 2024 - Jan 2025</span></div>
               <p class="exp-company">H.V. Impex Inc · United States</p>
-              
-              <p class="exp-narrative">
-                I drove profitability for eco-friendly product lines by applying <strong>predictive modeling and scenario analysis</strong> to pricing and location strategies. By synthesizing competitive intelligence with internal sales data, I identified high-value target segments and optimized cost structures to maximize margins in a competitive market.
-              </p>
-
+              <p class="exp-narrative">Drove profitability for eco-friendly product lines using predictive modeling.</p>
               <ul>
-                <li>Partnered with senior leadership to devise B2C pricing strategies for 5 core product lines using scenario analysis and financial modeling, increasing revenue by $1M.</li>
-                <li>Identified top-performing locations and improved resource allocation by 12% through the development of strategic Tableau dashboards.</li>
-                <li>Established a new brand identity for an eco-friendly product line, creating strategic messaging that increased recognition by 15%.</li>
-                <li>Identified a high-value target market by analyzing competitive landscapes and 10,000+ customer surveys, boosting profitability by 10%.</li>
+                <li>Increased revenue by $1M through scenario analysis.</li>
+                <li>Improved resource allocation by 12% via Tableau dashboards.</li>
               </ul>
             </div>
           </article>
-
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="Kent.png" alt="The Kent Group" class="company-logo">
-            </div>
+            <div class="exp-logo-col"><img src="Kent.png" alt="The Kent Group" class="company-logo"></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Analyst</h3>
-                <span class="exp-date">July 2023 - June 2024</span>
-              </div>
+              <div class="exp-header-row"><h3>Business Analyst</h3><span class="exp-date">July 2023 - June 2024</span></div>
               <p class="exp-company">The Kent Group · United States</p>
-              
-              <p class="exp-narrative">
-                I served as the analytical engine behind the firm's expansion and retention strategies. By leveraging <strong>SQL for root-cause analysis</strong> and presenting weekly C-suite reviews, I turned operational data into a clear roadmap for market share growth.
-              </p>
-
+              <p class="exp-narrative">Leveraging SQL for root-cause analysis and market share growth.</p>
               <ul>
-                <li>Leveraged SQL to support performance reviews and analyze monthly sales metrics, conducting root cause analysis that drove a 12% increase in customer retention.</li>
-                <li>Facilitated weekly C-suite reviews using PowerPoint, identifying product portfolio gaps that contributed to a 15% gain in market share.</li>
-                <li>Conducted wholesale vs. retail channel comparative analysis in MS Excel, uncovering $2M in revenue growth opportunities.</li>
-                <li>Led the firm’s expansion strategy by analyzing demographic data to select high-potential store locations, driving a 7% revenue increase.</li>
+                <li>12% increase in customer retention through SQL analysis.</li>
+                <li>Uncovered $2M in revenue growth opportunities.</li>
               </ul>
             </div>
           </article>
-
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <img src="Cargo.png" alt="CargoSprint" class="company-logo">
-            </div>
+            <div class="exp-logo-col"><img src="Cargo.png" alt="CargoSprint" class="company-logo"></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Data Analyst & BI Intern</h3>
-                <span class="exp-date">July 2022 - Sept 2022</span>
-              </div>
+              <div class="exp-header-row"><h3>Data Analyst & BI Intern</h3><span class="exp-date">July 2022 - Sept 2022</span></div>
               <p class="exp-company">Advent eModal (Acquired by CargoSprint)</p>
-              
-              <p class="exp-narrative">
-                In this BI-focused role, I engineered the data infrastructure required for real-time decision-making. I <strong>automated ETL pipelines</strong> and built high-frequency dashboards to give stakeholders immediate visibility into fintech and operational KPIs.
-              </p>
-
+              <p class="exp-narrative">Automated ETL pipelines and built high-frequency dashboards.</p>
               <ul>
-                <li>Streamlined ETL processes by extracting financial data from a data lake into a centralized warehouse using Azure SQL & Databricks, saving 60 man-hours monthly.</li>
-                <li>Built a real-time PowerBI dashboard with Power Query, updating Fintech KPIs every 15 minutes and enhancing team efficiency by 20%.</li>
-                <li>Designed executive Tableau dashboards on cost-revenue models and product trends, improving market penetration analysis by 10%.</li>
+                <li>Saved 60 man-hours monthly via Azure and Databricks automation.</li>
+                <li>Updated Fintech KPIs every 15 minutes with Power Query.</li>
               </ul>
             </div>
           </article>
-
           <article class="exp-row reveal">
-            <div class="exp-logo-col">
-              <div class="company-logo-placeholder">🏢</div>
-            </div>
+            <div class="exp-logo-col"><div class="company-logo-placeholder">🏢</div></div>
             <div class="exp-content-col">
-              <div class="exp-header-row">
-                <h3>Business Analyst</h3>
-                <span class="exp-date">June 2020 - Aug 2021</span>
-              </div>
+              <div class="exp-header-row"><h3>Business Analyst</h3><span class="exp-date">June 2020 - Aug 2021</span></div>
               <p class="exp-company">Jayant Pipe Syndicate · India</p>
-              
-              <p class="exp-narrative">
-                Early in my career, I focused on optimizing the bottom line through <strong>process improvement and inventory analysis</strong>. I used Python and Lean methodologies to streamline operations and uncover hidden revenue opportunities in invoice data.
-              </p>
-
+              <p class="exp-narrative">Focused on process improvement and inventory analysis via Python.</p>
               <ul>
-                <li>Analyzed $5M in invoices via Python to optimize high-demand inventory, boosting inventory turnover by 7% and profitability by 3%.</li>
-                <li>Achieved 14% revenue growth by conducting P&L analysis and capitalizing on key business metrics like client acquisition costs.</li>
-                <li>Leveraged Lean iterative feedback loops to translate business requirements into process maps, reducing cross-team errors by 30%.</li>
+                <li>Analyzed $5M in invoices to optimize high-demand inventory.</li>
+                <li>Achieved 14% revenue growth through P&L analysis.</li>
               </ul>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -330,41 +240,32 @@
     <section id="projects" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Key Projects</h2>
-        <p class="section-lead reveal">
-          A selection of analytical projects demonstrating predictive modeling, dashboard creation, and strategic insights.
-        </p>
         <div class="gallery-grid">
           <article class="gallery-card reveal">
-            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80');"></div>
             <div class="gallery-content">
-              <h3>CEO Analysis: Fortune 500 Companies</h3>
-              <p>Performed Exploratory Data Analysis on 10 CEOs via Tableau. Investigated approval ratings, compensation growth, and shareholder returns.</p>
-              <div class="project-buttons">
-                <a href="https://public.tableau.com/app/profile/kavish.shah/viz/Ceo_Analysis/CEOAnalysis" target="_blank" class="btn-project">View Dashboard</a>
-              </div>
+              <h3>CEO Analysis: Fortune 500</h3>
+              <p>Tableau investigation into approval ratings and shareholder returns.</p>
+              <div class="project-buttons"><a href="https://public.tableau.com/app/profile/kavish.shah/viz/Ceo_Analysis/CEOAnalysis" target="_blank" class="btn-project">View Dashboard</a></div>
             </div>
           </article>
           <article class="gallery-card reveal">
-            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');"></div>
             <div class="gallery-content">
               <h3>Airbnb Analysis: Australia</h3>
-              <p>Analyzed customer preference patterns. Built predictive models (Decision Tree, Random Forest) with >90% accuracy. Developed a dashboard for availability insights.</p>
+              <p>Predictive models with >90% accuracy for availability insights.</p>
               <div class="project-buttons">
                 <a href="https://public.tableau.com/app/profile/kavish.shah/viz/Airbnb_Basic_Analysis2/Dashboard1" target="_blank" class="btn-project">View Dashboard</a>
-                <a href="https://drive.google.com/file/d/1SAyhGWLq2vRaVO1nZ2adMqN83jqnmzRz/view" target="_blank" class="btn-project">View Report</a>
-                <a href="https://docs.google.com/presentation/d/17F6_gsogiSD5zLvoorjn2Znn_PB9ejdu/edit?rtpof=true&sd=true" target="_blank" class="btn-project">View PPT</a>
                 <a href="https://github.com/kavishshah17/Airbnb-Availability-Prediction-/blob/main/Airbnb_Australia_Final.ipynb" target="_blank" class="btn-project">View Python Code</a>
               </div>
             </div>
           </article>
           <article class="gallery-card reveal">
-            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=800&q=80');"></div>
             <div class="gallery-content">
               <h3>BingeWatch Insights</h3>
-              <p>Developed a dynamic dashboard providing a holistic view of the Netflix content landscape. Utilized complex calculated fields including Year to Date (YTD) and MAX() functions, alongside advanced parameters to uncover hidden patterns in genre classifications, release dates, and content distribution by country.</p>
-              <div class="project-buttons">
-                <a href="https://public.tableau.com/app/profile/kavish.shah/viz/BingeWatchInsightsADeepDiveintoNetflixOriginals/Netflix" target="_blank" class="btn-project">View Dashboard</a>
-              </div>
+              <p>Holistic view of Netflix content landscape via complex calculated fields.</p>
+              <div class="project-buttons"><a href="https://public.tableau.com/app/profile/kavish.shah/viz/BingeWatchInsightsADeepDiveintoNetflixOriginals/Netflix" target="_blank" class="btn-project">View Dashboard</a></div>
             </div>
           </article>
         </div>
@@ -374,46 +275,18 @@
     <section id="skills" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Skills</h2>
-        <p class="section-lead reveal">Technical, analytical and business skills I use in my work.</p>
         <div class="skills-grid">
-          
           <div class="skill-card reveal">
             <h3>Technical Skills</h3>
-            <div class="skill-tags">
-              <span>Python</span><span>R</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Salesforce</span><span>PostgreSQL</span><span>MS Excel</span><span>MS Office</span>
-            </div>
+            <div class="skill-tags"><span>Python</span><span>R</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>PostgreSQL</span><span>MS Excel</span></div>
           </div>
-
           <div class="skill-card reveal delay-100">
-            <h3>Business Analysis Competency</h3>
-            <div class="skill-tags">
-              <span>Stakeholder Management</span>
-              <span>Business Process Improvement</span>
-              <span>KPI & Performance Reporting</span>
-              <span>UAT Validation</span>
-              <span>Scrum Support</span>
-            </div>
+            <h3>Decision Intelligence</h3>
+            <div class="skill-tags"><span>Predictive Modelling</span><span>Risk Analysis</span><span>Customer Insights</span><span>KPIs</span><span>Trend Analysis</span></div>
           </div>
-
           <div class="skill-card reveal delay-200">
-            <h3>Financial & Operational Analytics</h3>
-            <div class="skill-tags">
-              <span>KPI Development</span><span>Forecasting</span><span>Reporting</span><span>Financial Modeling</span><span>Scenario Analysis</span><span>Risk Analysis</span><span>Customer Insights</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
-            <h3>Statistical Methods</h3>
-            <div class="skill-tags">
-              <span>Linear & Multiple Regression</span><span>Hypothesis Testing</span><span>A/B Testing</span><span>Decision Tree Analysis</span><span>Time Series Forecasting</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal">
             <h3>Tools & Platforms</h3>
-            <div class="skill-tags">
-              <span>Azure</span><span>Databricks</span><span>Synapse</span><span>OLAP/Data Warehouse</span><span>Git</span><span>ERP Systems</span><span>BI Platforms</span>
-            </div>
+            <div class="skill-tags"><span>Azure</span><span>Databricks</span><span>Synapse</span><span>Git</span><span>ERP Systems</span></div>
           </div>
         </div>
       </div>
@@ -423,25 +296,11 @@
       <div class="container">
         <h2 class="reveal">Certifications</h2>
         <div class="cert-grid reveal">
-          <div class="cert-card"><h4><a href="https://www.credly.com/badges/0335c860-0ff3-48cb-9078-41e62e5f885c/linked_in_profile" target="_blank">McKinsey Forward Program</a></h4><p>McKinsey & Company</p></div>
-          <div class="cert-card"><h4>Advanced Microsoft Excel</h4><p>Tata Steel</p></div>
-          <div class="cert-card"><h4>Python for Data Science and AI</h4><p>IBM</p></div>
-          <div class="cert-card"><h4>Python for Everybody</h4><p>Coursera</p></div>
-          <div class="cert-card"><h4>Six Sigma: Green Belt</h4><p>LinkedIn</p></div>
-          <div class="cert-card"><h4>SQL Fundamentals</h4><p>Datacamp</p></div>
+          <div class="cert-card"><h4>McKinsey Forward</h4><p>McKinsey & Company</p></div>
+          <div class="cert-card"><h4>Advanced MS Excel</h4><p>Tata Steel</p></div>
+          <div class="cert-card"><h4>Python Data Science</h4><p>IBM</p></div>
+          <div class="cert-card"><h4>Six Sigma Green Belt</h4><p>LinkedIn</p></div>
         </div>
-      </div>
-    </section>
-
-    <section id="pubs" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Publications</h2>
-        <article class="exp-item reveal">
-            <h3>District Cooling System with Solar-based Vapor Absorption Chiller</h3>
-            <p class="exp-meta">Presented at the MIT-Harvard Conference</p>
-            <ul><li>Co-authored and presented a research paper on sustainable cooling systems.</li><li>Conducted financial analysis of the chiller system, leading to the development of a financial model that forecast the payback period, net present value, return on investment, and unit pricing.</li></ul>
-            <div class="project-buttons" style="margin-top: 15px;"><a href="https://www.youtube.com/watch?v=d8Jfaw7Z4p8&list=PLSnAaTy2cjSmEHFh-E8-rbv1_OJDRbo_0&index=40" target="_blank" class="btn-project">View Publication</a></div>
-        </article>
       </div>
     </section>
 
@@ -449,9 +308,8 @@
       <div class="container">
         <h2 class="reveal">Education</h2>
         <div class="education-timeline-center">
-          <article class="edu-card-split reveal"><h3>Master’s in Data Analytics</h3><p class="exp-meta">Northeastern University · Boston</p><br><p>Focused on data analytics, statistical methods and practical applications in business and decision-making.</p></article>
-          <article class="edu-card-split reveal"><h3>Post Graduate Diploma in Business Analytics</h3><p class="exp-meta">Gujarat University</p><br><p>Built a strong foundation in business analytics, reporting and data-driven decision support.</p></article>
-          <article class="edu-card-split reveal"><h3>Bachelor of Business Administration</h3><p class="exp-meta">Ahmedabad University<br><strong>Specialization: Finance</strong></p><br><p>Developed core knowledge in business, finance and management, forming the base for later analytics and strategy work.</p></article>
+          <article class="edu-card-split reveal"><h3>Master’s in Data Analytics</h3><p class="exp-meta">Northeastern University · Boston</p></article>
+          <article class="edu-card-split reveal"><h3>BBA - Finance</h3><p class="exp-meta">Ahmedabad University</p></article>
         </div>
       </div>
     </section>
@@ -459,125 +317,83 @@
     <section id="contact" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Contact</h2>
-        <p class="section-lead reveal">
-          Open to roles in data analysis, business analysis, business strategy and Business Intelligence. Always want to connect with anyone passionate about solving hard business problems and learning from one another.
-        </p>
         <div class="contact-links reveal">
           <p>Email: <a href="mailto:kavishshah1702@gmail.com">kavishshah1702@gmail.com</a></p>
           <p>Links: <a href="https://github.com/kavishshah17" target="_blank">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/kavishshah1702/" target="_blank">LinkedIn</a></p>
-        </div>
-        <div class="tableau-container reveal delay-100">
-            <a href="https://public.tableau.com/app/profile/kavish.shah/vizzes" target="_blank" class="simple-text-link">View Tableau Profile <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> · Kavish Shah · Portfolio</span>
-      <a href="#top">Back to top</a>
-    </div>
+    <div class="container footer-inner"><span>© <span id="year"></span> · Kavish Shah</span><a href="#top">Back to top</a></div>
   </footer>
 
   <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
 
   <script>
-    // Year logic
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme Toggle Initialization
+    // Theme Toggle
     const toggle = document.getElementById("theme-toggle");
-    const body = document.body;
-
-    // Check if user has a preference, if not, set to dark as default
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    
-    if (savedTheme === "dark") {
-      body.classList.add("dark");
-      toggle.textContent = "☀️";
-    } else {
-      body.classList.remove("dark");
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.remove("dark");
       toggle.textContent = "🌙";
+    } else {
+      document.body.classList.add("dark");
+      toggle.textContent = "☀️";
     }
 
     toggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      const isDark = body.classList.contains("dark");
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
       toggle.textContent = isDark ? "☀️" : "🌙";
       localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    // Read More Logic
+    const readMoreBtn = document.getElementById("read-more-btn");
+    const bioContainer = document.getElementById("bio-container");
+
+    readMoreBtn.addEventListener("click", () => {
+      if (bioContainer.classList.contains("bio-collapsed")) {
+        bioContainer.classList.remove("bio-collapsed");
+        bioContainer.classList.add("bio-expanded");
+        readMoreBtn.textContent = "Read Less";
+      } else {
+        bioContainer.classList.remove("bio-expanded");
+        bioContainer.classList.add("bio-collapsed");
+        readMoreBtn.textContent = "Read More";
+        // Scroll back to top of about section for UX
+        document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
+      }
     });
 
     // Mobile Menu
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
-    if(mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-          mobileBtn.classList.toggle('active');
-          mainNav.classList.toggle('nav-open');
-        });
-    }
-
-    // Nav closing
-    const navLinks = document.querySelectorAll('.main-nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if(mobileBtn) {
-            mobileBtn.classList.remove('active');
-            mainNav.classList.remove('nav-open');
-        }
-      });
+    mobileBtn.addEventListener('click', () => {
+      mobileBtn.classList.toggle('active');
+      mainNav.classList.toggle('nav-open');
     });
 
     // Roles Animation
-    const roles = ["I am a Business Analyst.", "I am a Data Analyst.", "I am a Business Intelligence Analyst.", "I am a Business Strategist."];
+    const roles = ["Business Analyst", "Data Analyst", "Decision Strategist"];
     const roleEl = document.getElementById("role-rotator");
     let roleIndex = 0;
-    function showNextRole() {
+    setInterval(() => {
       roleEl.classList.remove("fade-in");
       void roleEl.offsetWidth; 
       roleEl.classList.add("fade-in");
       roleEl.textContent = roles[roleIndex];
       roleIndex = (roleIndex + 1) % roles.length;
-    }
-    showNextRole();
-    setInterval(showNextRole, 2000);
+    }, 2500);
 
-    // Scrollspy
-    const sections = document.querySelectorAll("main section[id]");
-    const menuLinks = document.querySelectorAll('.main-nav a[href^="#"]');
-    function setActiveLink() {
-      let currentId = "";
-      const scrollPos = window.scrollY + 120;
-      sections.forEach((section) => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        if (scrollPos >= top && scrollPos < top + height) {
-          currentId = section.id;
-        }
-      });
-      menuLinks.forEach((link) => {
-        const href = link.getAttribute("href");
-        if (href === `#${currentId}`) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
-        }
-      });
-    }
-    window.addEventListener("scroll", setActiveLink);
-
-    // Reveal Animation
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target); 
-        }
-      });
-    }, { root: null, threshold: 0.15 });
-    revealElements.forEach(el => revealObserver.observe(el));
+    // Scroll Reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     // Scroll Up
     const scrollUpBtn = document.getElementById("scroll-up");
