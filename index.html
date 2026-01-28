@@ -486,11 +486,11 @@
     // Year logic
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme Toggle - Initialization logic for Default Dark
+    // Theme Toggle Initialization
     const toggle = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Check if user has a preference, if not, set to dark
+    // Check if user has a preference, if not, set to dark as default
     const savedTheme = localStorage.getItem("theme") || "dark";
     
     if (savedTheme === "dark") {
