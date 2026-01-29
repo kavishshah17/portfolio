@@ -332,24 +332,34 @@ body.dark .main-nav a.active {
   overflow: hidden; box-shadow: var(--card-shadow);
 }
 .about-left { background-color: var(--bg-alt); padding: 30px; flex: 1 1 300px; border-right: 1px solid var(--border); }
-.about-right { padding: 30px; flex: 2 1 400px; }
 
-/* Force full justification for About Me paragraphs (including last line)
-   - text-align-last helps browsers justify the last line
-   - the ::after inline-block trick forces full justification in tricky layouts
-   - hyphens allow cleaner breaks on narrow screens
-*/
+/* =======================
+   JUSTIFICATION FIX HERE
+   ======================= */
+.about-right {
+  padding: 30px;
+  flex: 2 1 400px;
+
+  /* Prevent flex-child from causing the paragraph to not justify */
+  min-width: 0;
+  display: block;
+}
+
+/* About paragraph justification */
 .about-right p {
   text-align: justify !important;
   text-justify: inter-word;
   text-align-last: justify;
   -moz-text-align-last: justify;
-  -webkit-text-size-adjust: 100%;
+
+  width: 100%;
+  display: block;
+
+  line-height: 1.75;
   hyphens: auto;
-  line-height: 1.7;
 }
 
-/* The empty pseudo-element helps justify the final short line in some browsers */
+/* Small helper to avoid single-line justification issues */
 .about-right p::after {
   content: "";
   display: inline-block;
