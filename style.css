@@ -86,19 +86,25 @@ a:hover {
 /* Desktop-only visible break element */
 .desktop-break { display: none; }
 
-/* Show the break and slightly adjust width on larger screens */
+/* For Desktop: Increased width allows text to sit on 2 lines */
 @media (min-width: 900px) {
   .desktop-break { display: inline; }
-  #about .section-lead { max-width: 720px !important; }
+  #about .section-lead { 
+    max-width: 1000px !important; /* Increased from 720px */
+    margin: 0 auto 50px 0 !important;
+  }
 }
 
-/* For slightly smaller tablets where you still want 2 lines */
+/* For Tablets: Adjusted width for 2-line balance */
 @media (min-width: 768px) and (max-width: 899px) {
   .desktop-break { display: inline; }
-  #about .section-lead { max-width: 620px !important; font-size: 1.12rem; }
+  #about .section-lead { 
+    max-width: 850px !important; /* Increased from 620px */
+    font-size: 1.12rem; 
+  }
 }
 
-/* Mobile: hide forced break, allow normal wrapping (keeps readability) */
+/* Mobile: Keep as is to ensure it doesn't overflow the screen */
 @media (max-width: 767px) {
   .desktop-break { display: none; }
   #about .section-lead { max-width: 100% !important; font-size: 1rem; }
