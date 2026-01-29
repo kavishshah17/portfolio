@@ -75,7 +75,7 @@ a:hover {
 
 /* Force a desktop-only break so the About lead appears as two LEFT-aligned lines */
 #about .section-lead {
-  max-width: 720px !important;   /* controls wrapping */
+  max-width: 1000px !important;   /* controls wrapping */
   margin: 0 0 50px 0 !important; /* left-aligned, no centering */
   text-align: left !important;
   line-height: 1.6;
