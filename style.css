@@ -86,11 +86,14 @@ a:hover {
   line-height: 1.6;
 }
 
-#about .section-lead {
+/* About lead: constrained width, CENTERED */
+#about 
+.section-lead {
   max-width: 700px !important;
-  margin: 0 0 50px 0 !important;
-  text-align: left !important;
+  margin: 0 auto 50px auto !important;
+  text-align: center !important;
 }
+
 
 
 
