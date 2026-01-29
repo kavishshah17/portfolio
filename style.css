@@ -73,18 +73,6 @@ a:hover {
   padding: 50px 0;
 }
 
-/* Lead Paragraph */
-.section-lead {
-  font-size: 1.25rem;
-  color: var(--text-light);
-
-  /* ✅ Controls width so the text wraps */
-  max-width: 750px;
-
-  text-align: left;
-  margin-bottom: 50px;
-  line-height: 1.6;
-}
 /* Force a desktop-only break so the About lead appears as two LEFT-aligned lines */
 #about .section-lead {
   max-width: 720px !important;   /* controls wrapping */
