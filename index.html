@@ -5,6 +5,13 @@
   <title>Kavish Shah · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* This rule ensures the "About Me" text is justified even if style.css tries to override it */
+    .about-right p {
+      text-align: justify !important;
+      text-justify: inter-word; /* Enhances the look of justified text in modern browsers */
+    }
+  </style>
 </head>
 <body id="top" class="dark">
   
@@ -105,12 +112,12 @@
             </div>
           </div>
           <div class="about-right">
-            <p style="text-align: justify;">
+            <p>
               I work across business analysis, data analytics and financial modeling to help organizations
               make informed decisions. My experience spans forecasting, reporting, operational analysis,
               dashboard development and translating complex datasets into practical insights for business teams.
             </p>
-            <p style="text-align: justify;">
+            <p>
               I enjoy solving ambiguous business problems, optimizing workflows and supporting strategic decisions
               using clear data storytelling. I’ve worked across multiple industries, which has sharpened my 
               adaptability and ability to quickly grasp industry-specific nuances.
