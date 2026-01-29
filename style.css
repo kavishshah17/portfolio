@@ -77,11 +77,15 @@ a:hover {
 .section-lead {
   font-size: 1.25rem;
   color: var(--text-light);
-  max-width: 100%; 
-  text-align: left; 
+
+  /* ✅ Controls width so the text wraps */
+  max-width: 750px;
+
+  text-align: left;
   margin-bottom: 50px;
   line-height: 1.6;
 }
+
 
 /* --- HEADER & NAV --- */
 .top-nav {
