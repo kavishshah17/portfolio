@@ -42,6 +42,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div> 
       
@@ -71,7 +72,7 @@
       </div>
     </section>
 
-    <!-- ✅ ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about" class="section section-alt">
       <div class="container">
         <h2 class="reveal">About me</h2>
@@ -149,7 +150,7 @@
       </div>
     </section>
 
-    <!-- ✅ HELP SECTION -->
+    <!-- HOW I CAN HELP -->
     <section id="help" class="section section-alt">
       <div class="container">
         <h2 class="reveal">How I can help</h2>
@@ -187,7 +188,8 @@
         </div>
       </div>
     </section>
-    <!-- ✅ EXPERIENCE SECTION -->
+
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="container">
         <h2 class="reveal">Professional Experience</h2>
@@ -343,7 +345,7 @@
       </div>
     </section>
 
-    <!-- ✅ PROJECTS SECTION -->
+    <!-- PROJECTS -->
     <section id="projects" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Key Projects</h2>
@@ -392,7 +394,8 @@
         </div>
       </div>
     </section>
-    <!-- ✅ SKILLS SECTION -->
+
+    <!-- SKILLS -->
     <section id="skills" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Skills</h2>
@@ -451,7 +454,7 @@
       </div>
     </section>
 
-    <!-- ✅ CERTIFICATIONS -->
+    <!-- CERTS -->
     <section id="certs" class="section">
       <div class="container">
         <h2 class="reveal">Certifications</h2>
@@ -475,7 +478,7 @@
       </div>
     </section>
 
-    <!-- ✅ PUBLICATIONS -->
+    <!-- PUBS -->
     <section id="pubs" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Publications</h2>
@@ -499,7 +502,7 @@
       </div>
     </section>
 
-    <!-- ✅ EDUCATION -->
+    <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
         <h2 class="reveal">Education</h2>
@@ -526,7 +529,7 @@
       </div>
     </section>
 
-    <!-- ✅ CONTACT -->
+    <!-- CONTACT -->
     <section id="contact" class="section section-alt">
       <div class="container">
         <h2 class="reveal">Contact</h2>
@@ -555,7 +558,7 @@
 
   </main>
 
-  <!-- ✅ FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> · Kavish Shah · Portfolio</span>
@@ -565,15 +568,14 @@
 
   <button id="scroll-up" class="scroll-up-btn" aria-label="Scroll to top">↑</button>
 
-  <!-- ✅ FULL JAVASCRIPT -->
+  <!-- FULL JAVASCRIPT (theme, mobile nav, rotator, scrollspy, reveal, scroll-up, year) -->
   <script>
     // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme Toggle Default Dark
+    // Theme Toggle Initialization (Default Dark)
     const toggle = document.getElementById("theme-toggle");
     const body = document.body;
-
     const savedTheme = localStorage.getItem("theme") || "dark";
 
     if (savedTheme === "dark") {
@@ -591,17 +593,94 @@
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 
+    // Mobile Menu Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileBtn.classList.toggle('active');
+        mainNav.classList.toggle('nav-open');
+      });
+    }
+
+    // Close mobile nav when clicking a link
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileBtn) {
+          mobileBtn.classList.remove('active');
+          mainNav.classList.remove('nav-open');
+        }
+      });
+    });
+
+    // Roles Animation (rotator)
+    const roles = [
+      "I am a Business Analyst.",
+      "I am a Data Analyst.",
+      "I am a Business Intelligence Analyst.",
+      "I am a Business Strategist."
+    ];
+    const roleEl = document.getElementById("role-rotator");
+    let roleIndex = 0;
+    function showNextRole() {
+      if (!roleEl) return;
+      roleEl.classList.remove("fade-in");
+      void roleEl.offsetWidth; // force reflow
+      roleEl.classList.add("fade-in");
+      roleEl.textContent = roles[roleIndex];
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+    showNextRole();
+    setInterval(showNextRole, 2000);
+
+    // Scrollspy
+    const sections = document.querySelectorAll("main section[id]");
+    const menuLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+    function setActiveLink() {
+      let currentId = "";
+      const scrollPos = window.scrollY + 120;
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          currentId = section.id;
+        }
+      });
+      menuLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href === `#${currentId}`) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", setActiveLink);
+
+    // Reveal Animation (IntersectionObserver)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, { root: null, threshold: 0.15 });
+    revealElements.forEach(el => revealObserver.observe(el));
+
     // Scroll Up Button
     const scrollUpBtn = document.getElementById("scroll-up");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) scrollUpBtn.classList.add("show");
       else scrollUpBtn.classList.remove("show");
     });
-
-    scrollUpBtn.addEventListener("click", () =>
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    );
+    if (scrollUpBtn) {
+      scrollUpBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    }
   </script>
 
 </body>
 </html>
+
