@@ -85,6 +85,13 @@ a:hover {
   margin-bottom: 50px;
   line-height: 1.6;
 }
+/* ✅ Force About section lead text to wrap into 2 lines */
+#about .section-lead {
+  max-width: 700px !important;
+  margin: 0 auto 50px auto !important;
+  text-align: center !important;
+  display: block;
+}
 
 
 /* --- HEADER & NAV --- */
